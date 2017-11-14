@@ -1,1 +1,0 @@
-export default () => 'I get called from print.js!'; 
