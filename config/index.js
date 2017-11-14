@@ -11,14 +11,14 @@ const {plugins} = require('./plugins.js')
  if you don't want it, delete it, but also from dependencies in package.json and the import statement in index.js
  */
 let options = {
-    externals: {
-        lodash: {
-            commonjs: 'lodash',
-            commonjs2: 'lodash',
-            amd: 'lodash',
-            root: '_'
-        }
-    }, 
+    // externals: {
+    //     lodash: {
+    //         commonjs: 'lodash',
+    //         commonjs2: 'lodash',
+    //         amd: 'lodash',
+    //         root: '_'
+    //     }
+    // }, 
     entry,
     plugins,
     output,

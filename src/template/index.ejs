@@ -1,132 +1,119 @@
-<!DOCTYPE html>
+<!DOCTYPE doctype html>
 <html>
     <head>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-type"/>
+        <meta charset="utf-8"/>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="{{ csrf_token() }}" name="csrf-token"/>
         <title>
             <%= htmlWebpackPlugin.options.title %>
         </title>
-        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet">
-            <script crossorigin="anonymous" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
-            </script>
-            <script crossorigin="anonymous" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
-            </script>
-            <script crossorigin="anonymous" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
-            </script>
-        </link>
+        <!-- Fonts -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet"/>
+        <!-- Bootstrap -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+        </script>
+        <script crossorigin="anonymous" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js">
+        </script>
+        <script crossorigin="anonymous" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
+        </script>
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .row {
+                padding: 1rem 0;
+            }
+        </style>
     </head>
-    <body>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-3">
-                    <%= htmlWebpackPlugin.options.title %>
-                </h1>
-                <p class="lead">
-                    Quick Bootstrap Setup
-                </p>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col col-md-4">
-                    <div class="card" style="width: 20rem;">
-                        <img alt="Card image cap" class="card-img-top" src="http://lorempixel.com/400/200/sports/">
-                            <div class="card-block">
-                                <h4 class="card-title">
-                                    Card title
-                                </h4>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    Cras justo odio
-                                </li>
-                                <li class="list-group-item">
-                                    Dapibus ac facilisis in
-                                </li>
-                                <li class="list-group-item">
-                                    Vestibulum at eros
-                                </li>
-                            </ul>
-                            <div class="card-block">
-                                <a class="card-link" href="#">
-                                    Card link
-                                </a>
-                                <a class="card-link" href="#">
-                                    Another link
-                                </a>
-                            </div>
-                        </img>
-                    </div>
-                </div>
-                <div class="col col-md-4">
-                    <div class="card" style="width: 20rem;">
-                        <img alt="Card image cap" class="card-img-top" src="http://lorempixel.com/400/200/nightlife/">
-                            <div class="card-block">
-                                <h4 class="card-title">
-                                    Card title
-                                </h4>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    Cras justo odio
-                                </li>
-                                <li class="list-group-item">
-                                    Dapibus ac facilisis in
-                                </li>
-                                <li class="list-group-item">
-                                    Vestibulum at eros
-                                </li>
-                            </ul>
-                            <div class="card-block">
-                                <a class="card-link" href="#">
-                                    Card link
-                                </a>
-                                <a class="card-link" href="#">
-                                    Another link
-                                </a>
-                            </div>
-                        </img>
-                    </div>
-                </div>
-                <div class="col col-md-4">
-                    <div class="card" style="width: 20rem;">
-                        <img alt="Card image cap" class="card-img-top" src="http://lorempixel.com/400/200/nature/">
-                            <div class="card-block">
-                                <h4 class="card-title">
-                                    Card title
-                                </h4>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                                </p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    Cras justo odio
-                                </li>
-                                <li class="list-group-item">
-                                    Dapibus ac facilisis in
-                                </li>
-                                <li class="list-group-item">
-                                    Vestibulum at eros
-                                </li>
-                            </ul>
-                            <div class="card-block">
-                                <a class="card-link" href="#">
-                                    Card link
-                                </a>
-                                <a class="card-link" href="#">
-                                    Another link
-                                </a>
-                            </div>
-                        </img>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
 </html>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <h1>
+                    busy-load
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="bl01">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Spinner
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            pump
+                        </h6>
+                        <p class="card-text">
+                            Without any options, the default spinner will be
+                            <strong>
+                                pump
+                            </strong>
+                            .
+                            <code>
+                                $("#bl01").busyLoad("show");
+                            </code>
+                        </p>
+                        <a class="btn btn-primary bl01" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="bl02">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Spinner
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            cube-grid
+                        </h6>
+                        <p class="card-text">
+                            <code>
+                                $("#bl02").busyLoad("show", {
+                        spinner: "cube-grid"
+                      });
+                            </code>
+                        </p>
+                        <a class="btn btn-primary bl02" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" id="bl03">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Spinner
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            pulsar
+                        </h6>
+                        <p class="card-text">
+                            <code>
+                                $("#bl01").busyLoad("show");
+                            </code>
+                        </p>
+                        <a class="btn btn-primary bl03" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</body>

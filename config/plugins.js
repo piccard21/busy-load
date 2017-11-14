@@ -28,7 +28,7 @@ if (app.env === 'PRODUCTION') {
 
 if (app.env === 'DEVELOPMENT-SERVER') {
     let htmlPlugin = new htmlWebpackPlugin({
-        title: 'npm-es6-webpack-skeleton',
+        title: app.htmlTitle,
         template: app.paths.path.resolve(app.paths.src, 'template', 'index.ejs'),
     });
     plugins.push(new cleanWebpackPlugin(app.paths.dist, cleanOptions), htmlPlugin, new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin());
