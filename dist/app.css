@@ -1,0 +1,56 @@
+.whatever {
+	padding: 5rem;
+}
+
+.you {
+	background: #fff;
+	margin: 1rem;
+}
+
+.want {
+	color: #000;
+}#one {
+    border-style: solid;
+    border-left-width: 15px;
+}
+#stop {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: lightblue;
+}/* shared/colors.css */
+/* shared/typography.css */
+.here-we-go {
+  font-size: 14px
+}
+.here-we-go a {
+  color: #32c7ff;
+}
+.here-we-go p {
+  color: rgb(0, 0, 0);
+  font-family: "FF DIN", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+@media (min-width: 601px) {
+  .here-we-go {
+    max-width: 30em
+  }
+}.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border-color: green; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  border-color: yellow; }
+
+.box {
+  border-radius: 10px; }
