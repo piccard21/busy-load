@@ -1,6 +1,6 @@
 # busy-load
 
-A simple, but flexible loading-mask plugin for jQuery. The are plenty of options & possibilities to expose an oberlay:
+A simple, but flexible loading-mask plugin for jQuery. There are plenty of options & possibilities to expose an overlay:
 
 * **Overlay**
   * animate it like fade or slide in
@@ -30,10 +30,7 @@ npm i busy-load
 ... or **cdn** and include jquery and **busy-load** in your page:
 
 ```
-<script
-  src="http://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" </script>
 
 <script src="jquery.loading.js"></script>
 <link href="jquery.loading.css" rel="stylesheet">
@@ -67,7 +64,7 @@ textColor: false, // default is color
 textMargin: ".5rem", 
 fontSize: "1rem",
 image: false,		// String
-fontawesome: false, // Boolean/String, when true: "fa fa-refresh fa-spin fa-2x fa-fw" or pass in your own
+fontawesome: false, // String, i.e.: "fa fa-refresh fa-spin fa-2x fa-fw" 
 custom: false, // jQuery Element
 spinner: "pump", // use one of the built-in css-spinners: pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid
 fullScreen: false, // Boolean or use $.busyLoadFull()
@@ -81,6 +78,11 @@ containerItemClass: "busy-load-container-item",  // String
 spinnerClass: "busy-load-spinner",  // String 
 textClass: "busy-load-text",  // String  
 ```
+
+
+### Usage
+
+
 
 ## Full
 
@@ -105,4 +107,8 @@ $.busyLoadSetup({
 }); 
 ```         
 
+
+
 ## License
+
+Monolog is licensed under the MIT License - see the LICENSE file for details.

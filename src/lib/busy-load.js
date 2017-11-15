@@ -45,6 +45,8 @@ export function busyLoadFull(action, options) {
             $body.removeClass("no-scroll"); 
             break;
     }
+
+    return $body;
  
 }
 
