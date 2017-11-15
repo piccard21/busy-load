@@ -1,8 +1,9 @@
 'use strict'
 // primary module-configuration
-const libraryVarName = 'npmEs6WebpackSkeleton';
+const libraryVarName = 'busyLoad';
 const libraryTarget = 'umd';
 const sourcemap = (process.env.NODE_ENV === 'PRODUCTION') ? true : false;
+const htmlTitle = 'busy-load';
 
 // general vars
 const paths = require('./paths.js');
@@ -18,5 +19,6 @@ module.exports = {
     libraryTarget: libraryTarget,
     paths,
     env: process.env.NODE_ENV,
-    sourcemap
+    sourcemap,
+    htmlTitle
 }
