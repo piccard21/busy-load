@@ -52,6 +52,21 @@
                 justify-content: center;
                 align-items: center;
             }
+
+            .my-own-container-class {
+                background: red !important; 
+            }
+            .my-own-container-item-class {
+                background: pink !important; 
+            
+            }
+            .my-own-spinner-class {
+                background: brown !important; 
+            
+            }
+            .my-own-text-class {
+                color: red !important; 
+            }
         </style>
         <script>
             $(function() {  
@@ -469,8 +484,11 @@
                             fontawesome:
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            add also fa-spin
+                            icon class
                         </h6> 
+                        <p>
+                            add also fa-spin
+                        </p>
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
@@ -494,8 +512,11 @@
                             fontawesome:
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            add also fa-spin
+                            icon class
                         </h6> 
+                        <p>
+                            add also fa-spin
+                        </p>
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
@@ -1013,7 +1034,7 @@
                             animationOptions:
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            slow
+                            slow/fast
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
@@ -1063,6 +1084,134 @@
             </div> 
         </div>
         <!-- row -->
+
+
+
+
+        <!-- Classes -->  
+        <div class="row">
+            <div class="col-md">
+                <h2>
+                    Classes
+                </h2> 
+                <p>
+                    Add your own-classes to the components of the overlay. 
+                </p>
+            </div>
+        </div>
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="class-01">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            containerClass:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            class
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                containerClass: "my-own-container-class" 
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info class-01" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="class-02">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            containerItemClass:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            class
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                containerItemClass: "my-own-container-item-class" 
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info class-02" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+        </div>
+        <!-- row -->
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="class-03">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            spinnerClass:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            class
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                spinnerClass: "my-own-spinner-class" 
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info class-03" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="class-04">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            textClass:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            class
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                textClass: "my-own-text-class" 
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info class-04" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+
     </div>
     <!-- container -->
 </body>

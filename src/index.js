@@ -240,4 +240,28 @@ $(function() {
           animationOptions: 4000
         });
     });
+
+
+    // classes
+    $(".class-01").click(function(e) {
+        showHide(e, "#class-01", {  
+          containerClass: "my-own-container-class" 
+        });
+    }); 
+    $(".class-02").click(function(e) {
+        showHide(e, "#class-02", {  
+          containerItemClass: "my-own-container-item-class" 
+        });
+    }); 
+    $(".class-03").click(function(e) {
+        showHide(e, "#class-03", {  
+          spinnerClass: "my-own-spinner-class" 
+        });
+    }); 
+    $(".class-04").click(function(e) {
+        showHide(e, "#class-04", {  
+          text: "LOADING ...",
+          textClass: "my-own-text-class" 
+        });
+    }); 
 });
