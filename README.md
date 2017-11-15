@@ -3,16 +3,16 @@
 A simple, but flexible loading-mask plugin for jQuery. The are plenty of options & possibilities to expose an oberlay:
 
 * Overlay
-** animate it like fade or slide in
-** tinker with the options, like background, color ...  
+ * animate it like fade or slide in
+ * tinker with the options, like background, color ...  
 * Spinners
-** css - select from a collection of pure css-spinners
-** image - use an image as a spinner
-** custom - pass in yout custom jQuery-Element
+ * css - select from a collection of pure css-spinners
+ * image - use an image as a spinner
+ * custom - pass in yout custom jQuery-Element
 * Text
-** show some text 
-** position the text
-** customize your text, like color or margin 
+ * show some text 
+ * position the text
+ * customize your text, like color or margin 
 
 ## Demo
 
