@@ -56,31 +56,31 @@ $("#another-element").busyLoad('hide');
 
 Here's a full list of all the default-options you can use and modify on the plugin:
 
-```    
-color: "#fff",
-background: "rgba(0, 0, 0, 0.21)",
-text: false,	// String
-textColor: false, // default is color
-textMargin: ".5rem", 
-fontSize: "1rem",
-image: false,		// String
-fontawesome: false, // String, i.e.: "fa fa-refresh fa-spin fa-2x fa-fw" 
-custom: false, // jQuery Element
-spinner: "pump", // use one of the built-in css-spinners: pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid
-fullScreen: false, // Boolean or use $.busyLoadFull()
-animation: false,	// Boolean/String - fade, slide 
-animationOptions: false,	// String, Integer - slow/fast, 4000ms
-maxSize: "50px", // Integer/String only for spinners & images, not fontawesome & custom
-minSize: "20px", // Integer/String only for spinners & images, not fontawesome & custom 
-textPosition: "right", // left, right, top, bottom - default: right  
-containerClass: "busy-load-container", // String 
-containerItemClass: "busy-load-container-item",  // String 
-spinnerClass: "busy-load-spinner",  // String 
-textClass: "busy-load-text",  // String  
-```
+ 
+Property              | Description       | value      | Default value
+-------------         | -------------     | -------------
+action                | show or hide the overlay | show, hide | -
+spinnerClass          | a CSS-spinner     | pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid | pump
+image        		  | use an image as spinner  | source for image (location, string)  | false
+fontawesome   		  | use a fontawesome-icon as spinner  | $("#el")  | false
+custom        		  | use a custom jQuery-element as spinner  | source for image (location, string)  | false
+color             	  | color of the spinner  | color-value   | #fff
+background             	  | background of the overlay  | color-value   | rgba(0, 0, 0, 0.21)
+maxSize        		  | max-size of the spinner  | size-value  | "50px"
+minSize        		  | min-size of the spinner  | size-value  | "20px"
+text 		          | text next to the spinner | String or false   | false
+textColor 		          | color of the  | color-value      | default is color
+textMargin 		          | margin of the text - works on every textPosition | size-value   | false
+textPosition 		          | where should the text appear | top, bottom, left, right   | right
+animation 		          | use an animation, when overlay appears or hides| fade, slide | false 
+animationOption 		          | pass in duration of animation | slow, fast, integer in ms | fast 
+containerClass 		          | add a class to the overlay-container | class-name | busy-load-container 
+containerItemClass 		          | add a class to the container-item | class-name | busy-load-container-item"
+spinnerClass 		          | add a class to the spinner | class-name | busy-load-spinner
+textClass 		          | add a class to the text | class-name | busy-load-text
 
 
-### Usage
+To see the in action and learn how to use them [goto](https://piccard21.github.io/busy-load/).
 
 
 

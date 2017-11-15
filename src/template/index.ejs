@@ -113,6 +113,9 @@
                 </p>
             </div>
         </div>
+    </div>
+    <!-- container -->
+    <div class="container">
         <!-- Setup -->
         <div class="row">
             <div class="col-md">
@@ -169,15 +172,19 @@
                 </br>
             </div>
         </div>
-
-        <!-- Spinners --> 
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- Spinners -->
         <!-- CSS -->
         <div class="row">
             <div class="col-md">
                 <h2>
                     Spinners
                 </h2>
-                <h4>CSS</h4>
+                <h4>
+                    CSS
+                </h4>
                 <p>
                     Choose one of the built in CSS-spinners.
                 </p>
@@ -394,17 +401,21 @@
             <!-- col -->
         </div>
         <!-- row -->
-
-        <!-- IMAGE -->      
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- IMAGE -->
         <div class="row">
             <div class="col-md">
-                <h4>Images</h4>
+                <h4>
+                    Images
+                </h4>
                 <p>
                     Use an image as spinner.
                 </p>
             </div>
         </div>
-        <!-- row --> 
+        <!-- row -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card" id="img-01">
@@ -417,10 +428,12 @@
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
-                                background: "rgba(76, 175, 80, 0.73)",<br>
-                                image: "data:image/gif;base64,R0lGODlhQAA..."
+                                background: "rgba(76, 175, 80, 0.73)",
                             <br>
-                                });
+                                image: "data:image/gif;base64,R0lGODlhQAA..."
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -455,27 +468,31 @@
                                     </br>
                                 </br>
                             </br>
-                        </code> 
+                        </code>
                         <a class="btn btn-info img-02" href="#">
                             show
                         </a>
                     </div>
                 </div>
-            </div> 
-            <!-- col --> 
+            </div>
+            <!-- col -->
         </div>
-        <!-- row --> 
-
-        <!-- FONTAWESOME -->        
+        <!-- row -->
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- FONTAWESOME -->
         <div class="row">
             <div class="col-md">
-                <h4>Fontawesome</h4>
+                <h4>
+                    Fontawesome
+                </h4>
                 <p>
-                    Include the fontawesome-library and use its spinners. 
+                    Include the fontawesome-library and use its spinners.
                 </p>
             </div>
         </div>
-        <!-- row --> 
+        <!-- row -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card" id="fawe-01">
@@ -485,7 +502,7 @@
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
                             icon class
-                        </h6> 
+                        </h6>
                         <p>
                             add also fa-spin
                         </p>
@@ -493,9 +510,9 @@
                             $("#el").busyLoad("show", {
                             <br>
                                 fontawesome: "fa fa-spinner fa-spin fa-3x fa-fw"
-                                    </br>
-                             });
-                        </code> 
+                            </br>
+                            });
+                        </code>
                         <p>
                         </p>
                         <a class="btn btn-info fawe-01" href="#">
@@ -513,7 +530,7 @@
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
                             icon class
-                        </h6> 
+                        </h6>
                         <p>
                             add also fa-spin
                         </p>
@@ -521,9 +538,9 @@
                             $("#el").busyLoad("show", {
                             <br>
                                 fontawesome: "fa fa-cog fa-spin fa-3x fa-fw"
-                                    </br>
-                             });
-                        </code> 
+                            </br>
+                            });
+                        </code>
                         <p>
                         </p>
                         <a class="btn btn-info fawe-02" href="#">
@@ -531,26 +548,30 @@
                         </a>
                     </div>
                 </div>
-            </div> 
-            <!-- col --> 
+            </div>
+            <!-- col -->
         </div>
         <!-- row -->
-
-        <!-- CUSTOM -->        
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- CUSTOM -->
         <div class="row">
             <div class="col-md">
-                <h4>Custom</h4> 
+                <h4>
+                    Custom
+                </h4>
                 <p>
                     Pass in your own jQuery-Element. Here's a quick example:
                 </p>
             </div>
         </div>
-        <!-- row --> 
+        <!-- row -->
         <div class="row">
             <div class="col-md-6">
                 <code class="code-pre">
-  let count = 1125;
-  let customElement = $("&lt;div&gt;", {
+                    let count = 1125;
+  let customElement = $("<div>", {
       id: "countdown",
       css: {
           "font-size" : "50px"
@@ -571,29 +592,31 @@
           $("#el").busyLoad("hide");
           return;
       }
-  }, 1000);</code> 
+  }, 1000);
+                </code>
             </div>
             <!-- col -->
-            <div class="col-md-6 flex-me" id="custom-01"> 
+            <div class="col-md-6 flex-me" id="custom-01">
                 <p>
                     <a class="btn btn-info custom-01" href="#">
                         show
                     </a>
                 </p>
-            </div> 
-            <!-- col --> 
+            </div>
+            <!-- col -->
         </div>
         <!-- row -->
-
- 
-        <!-- SIZE -->  
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- SIZE -->
         <div class="row">
             <div class="col-md">
                 <h2>
                     Sizing
                 </h2>
                 <p>
-                Use maxSize & minSize for sizing the spinner. This only works with CSS- & image-spinners.
+                    Use maxSize & minSize for sizing the spinner. This only works with CSS- & image-spinners.
                 </p>
             </div>
         </div>
@@ -602,26 +625,33 @@
                 <div class="card" id="size-01">
                     <div class="card-body">
                         <h4 class="card-title">
-                            max/minSize 
+                            max/minSize
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
                             size
                         </h6>
                         <p>
                             Size a spinner
-                        </p> 
-                        <p class="card-text">
-                        <code>
-                            $("#el").busyLoad("show", { <br>
-                            maxSize: "150px", <br>
-                            minSize: "150px" <br>
-                            });
-                        </code>
-                        <p>
                         </p>
-                        <a class="btn btn-info size-01" href="#">
-                            show
-                        </a>
+                        <p class="card-text">
+                            <code>
+                                $("#el").busyLoad("show", {
+                                <br>
+                                    maxSize: "150px",
+                                    <br>
+                                        minSize: "150px"
+                                        <br>
+                                            });
+                                        </br>
+                                    </br>
+                                </br>
+                            </code>
+                            <p>
+                            </p>
+                            <a class="btn btn-info size-01" href="#">
+                                show
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -630,26 +660,31 @@
                 <div class="card" id="size-02">
                     <div class="card-body">
                         <h4 class="card-title">
-                            max/minSize 
+                            max/minSize
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
                             size
                         </h6>
                         <p>
                             Size an image
-                        </p> 
+                        </p>
                         <code>
                             $("#el").busyLoad("show", {
+                            <br>
+                                maxSize: "200px",
                                 <br>
-                              maxSize: "200px", 
-                                <br>
-                              minSize: "200px",
-                                <br>
-                              background: "rgba(0, 51, 101, 0.83)",
-                                <br>
-                              image: "tardis"  
-                                <br>
-                                }); 
+                                    minSize: "200px",
+                                    <br>
+                                        background: "rgba(0, 51, 101, 0.83)",
+                                        <br>
+                                            image: "tardis"
+                                            <br>
+                                                });
+                                            </br>
+                                        </br>
+                                    </br>
+                                </br>
+                            </br>
                         </code>
                         <p>
                         </p>
@@ -659,18 +694,19 @@
                     </div>
                 </div>
             </div>
-            <!-- col --> 
+            <!-- col -->
         </div>
         <!-- row -->
-
-
-        <!-- Text -->  
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- Text -->
         <div class="row">
             <div class="col-md">
                 <h2>
                     Text
                 </h2>
-                Add text, position & style it. 
+                Add text, position & style it.
             </div>
         </div>
         <div class="row">
@@ -684,17 +720,19 @@
                             LOADING ...
                         </h6>
                         <p class="card-text">
-                        <code>
-                            $("#el").busyLoad("show", {
+                            <code>
+                                $("#el").busyLoad("show", {
                             text: "LOADING ..."
-                            <br>
-                            });
-                        </code>
-                        <p>
+                                <br>
+                                    });
+                                </br>
+                            </code>
+                            <p>
+                            </p>
+                            <a class="btn btn-info text-01" href="#">
+                                show
+                            </a>
                         </p>
-                        <a class="btn btn-info text-01" href="#">
-                            show
-                        </a>
                     </div>
                 </div>
             </div>
@@ -710,13 +748,15 @@
                         </h6>
                         <p>
                             Explicitly hide the spinner.
-                        </p> 
+                        </p>
                         <code>
                             $("#el").busyLoad("show", {
-                                text: "LOADING ...",<br>
-                                spinner: false
+                                text: "LOADING ...",
                             <br>
-                                });
+                                spinner: false
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -739,10 +779,12 @@
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
-                            text: "LOADING ...",<br>
-                            textPosition: "left"
+                            text: "LOADING ...",
                             <br>
-                                });
+                                textPosition: "left"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -768,10 +810,12 @@
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
-                            text: "LOADING ...",<br>
-                            textPosition: "right"
+                            text: "LOADING ...",
                             <br>
-                                });
+                                textPosition: "right"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -794,10 +838,12 @@
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
-                            text: "LOADING ...",<br>
-                            textPosition: "top"
+                            text: "LOADING ...",
                             <br>
-                                });
+                                textPosition: "top"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -820,10 +866,12 @@
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
-                            text: "LOADING ...",<br>
-                            textPosition: "bottom"
+                            text: "LOADING ...",
                             <br>
-                                });
+                                textPosition: "bottom"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -837,8 +885,6 @@
             <!-- col -->
         </div>
         <!-- row -->
-
-
         <!-- row -->
         <div class="row">
             <div class="col-md-4">
@@ -853,15 +899,19 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                                  text: "LOADING ...",
-                            <br>
-                                  textColor: "white",
-                            <br>
-                                  color: "red",
-                            <br>
-                                  background: "brown"
-                            <br>
-                                });
+                                text: "LOADING ...",
+                                <br>
+                                    textColor: "white",
+                                    <br>
+                                        color: "red",
+                                        <br>
+                                            background: "brown"
+                                            <br>
+                                                });
+                                            </br>
+                                        </br>
+                                    </br>
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -885,11 +935,13 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                              text: "LOADING ...",
-                            <br>
-                              textMargin: "3rem"
-                            <br>
-                                });
+                                text: "LOADING ...",
+                                <br>
+                                    textMargin: "3rem"
+                                    <br>
+                                        });
+                                    </br>
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -913,11 +965,13 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                              text: "LOADING ...",
-                            <br>
-                              fontSize: "2rem"
-                            <br>
-                                });
+                                text: "LOADING ...",
+                                <br>
+                                    fontSize: "2rem"
+                                    <br>
+                                        });
+                                    </br>
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -931,17 +985,17 @@
             <!-- col -->
         </div>
         <!-- row -->
-
-
-        <!-- Animation -->  
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- Animation -->
         <div class="row">
             <div class="col-md">
                 <h2>
                     Animation
-                </h2> 
+                </h2>
             </div>
         </div>
-
         <!-- row -->
         <div class="row">
             <div class="col-md-4">
@@ -956,9 +1010,10 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                                animation: false 
-                            <br>
-                                });
+                                animation: false
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -983,8 +1038,9 @@
                             $("#el").busyLoad("show", {
                             <br>
                                 animation: "fade"
-                            <br>
-                                });
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1009,8 +1065,9 @@
                             $("#el").busyLoad("show", {
                             <br>
                                 animation: "slide"
-                            <br>
-                                });
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1024,7 +1081,6 @@
             <!-- col -->
         </div>
         <!-- row -->
-
         <!-- row -->
         <div class="row">
             <div class="col-md-4">
@@ -1039,11 +1095,13 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                              animation: "fade",
-                            <br>
-                              animationOptions: "slow"
-                            <br>
-                                });
+                                animation: "fade",
+                                <br>
+                                    animationOptions: "slow"
+                                    <br>
+                                        });
+                                    </br>
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1067,11 +1125,13 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                              animation: "fade",
-                            <br>
-                              animationOptions: 4000
-                            <br>
-                                });
+                                animation: "fade",
+                                <br>
+                                    animationOptions: 4000
+                                    <br>
+                                        });
+                                    </br>
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1081,25 +1141,23 @@
                         </a>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <!-- row -->
-
-
-
-
-        <!-- Classes -->  
+    </div>
+    <!-- container -->
+    <div class="container">
+        <!-- Classes -->
         <div class="row">
             <div class="col-md">
                 <h2>
                     Classes
-                </h2> 
+                </h2>
                 <p>
-                    Add your own-classes to the components of the overlay. 
+                    Add your own-classes to the components of the overlay.
                 </p>
             </div>
         </div>
-
         <!-- row -->
         <div class="row">
             <div class="col-md-6">
@@ -1114,9 +1172,10 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                                containerClass: "my-own-container-class" 
-                            <br>
-                                });
+                                containerClass: "my-own-container-class"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1140,9 +1199,10 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                                containerItemClass: "my-own-container-item-class" 
-                            <br>
-                                });
+                                containerItemClass: "my-own-container-item-class"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1156,7 +1216,6 @@
             <!-- col -->
         </div>
         <!-- row -->
-
         <!-- row -->
         <div class="row">
             <div class="col-md-6">
@@ -1171,9 +1230,10 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                                spinnerClass: "my-own-spinner-class" 
-                            <br>
-                                });
+                                spinnerClass: "my-own-spinner-class"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1197,9 +1257,10 @@
                         <code>
                             $("#el").busyLoad("show", {
                             <br>
-                                textClass: "my-own-text-class" 
-                            <br>
-                                });
+                                textClass: "my-own-text-class"
+                                <br>
+                                    });
+                                </br>
                             </br>
                         </code>
                         <p>
@@ -1211,7 +1272,7 @@
                 </div>
             </div>
             <!-- col -->
-
+        </div>
+        <!-- container -->
     </div>
-    <!-- container -->
 </body>
