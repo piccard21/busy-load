@@ -6,9 +6,9 @@ A simple, but flexible loading-mask plugin for jQuery. The are plenty of options
   * animate it like fade or slide in
   * tinker with the options, like background, color ...  
 * **Spinners**
-  * css - select from a collection of pure css-spinners from [http://tobiasahlin.com/spinkit/](http://tobiasahlin.com/spinkit/)
+  * css - select from a collection of pure css-spinners from [Tobias Ahlin](http://tobiasahlin.com/spinkit/)
   * image - use an image as a spinner
-  * custom - pass in yout custom jQuery-Element
+  * custom - pass in your custom jQuery-Element
   * fontawesome
 * **Text**
   * show some text 
@@ -30,7 +30,10 @@ npm i busy-load
 ... or **cdn** and include jquery and **busy-load** in your page:
 
 ```
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 
 <script src="jquery.loading.js"></script>
 <link href="jquery.loading.css" rel="stylesheet">
@@ -54,25 +57,25 @@ $("#another-element").busyLoad('hide');
 
 ## Options
 
-Here's a list of all the default-options you can use and modify on the plugin:
+Here's a full list of all the default-options you can use and modify on the plugin:
 
 ```    
 color: "#fff",
 background: "rgba(0, 0, 0, 0.21)",
-text: false,
+text: false,	// String
 textColor: false, // default is color
 textMargin: ".5rem", 
 fontSize: "1rem",
-image: false,
-fontawesome: false, // "fa fa-refresh fa-spin fa-2x fa-fw"
-custom: false, // jQuery Object
-spinner: "pump", // pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid
-fullScreen: false, 
-animation: false,	// fade, slideDown/slideUp
+image: false,		// String
+fontawesome: false, // Boolean/String, when true: "fa fa-refresh fa-spin fa-2x fa-fw" or pass in your own
+custom: false, // jQuery Element
+spinner: "pump", // use one of the built-in css-spinners: pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid
+fullScreen: false, // Boolean or use $.busyLoadFull()
+animation: false,	// Boolean/String - fade, slide 
 animationOptions: false,	// String, Integer, Object - same as jQuery
 maxSize: "50px", // Integer/String only for spinners & images, not fontawesome & custom
-minSize: "20px", // Integer/String 
-textPosition: "right", // left, right, top, bottom  
+minSize: "20px", // Integer/String only for spinners & images, not fontawesome & custom 
+textPosition: "right", // left, right, top, bottom - default: right  
 containerClass: "busy-load-container", // String 
 containerItemClass: "busy-load-container-item",  // String 
 spinnerClass: "busy-load-spinner",  // String 
@@ -101,3 +104,5 @@ $.busyLoadSetup({
 	background: "rgba(255, 152, 0, 0.86)"
 }); 
 ```         
+
+## License
