@@ -58,7 +58,7 @@ Here's a full list of all the default-options you can use and modify on the plug
 
  
 Property              | Description       | value      | Default value
--------------         | -------------     | -------------
+-------------         | -------------     | -------------    | -------------
 action                | show or hide the overlay | show, hide | -
 spinnerClass          | a CSS-spinner     | pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid | pump
 image        		  | use an image as spinner  | source for image (location, string)  | false
@@ -80,7 +80,7 @@ spinnerClass 		          | add a class to the spinner | class-name | busy-load-s
 textClass 		          | add a class to the text | class-name | busy-load-text
 
 
-To see the in action and learn how to use them [goto](https://piccard21.github.io/busy-load/).
+To see them in action and learn how to use them [goto this place](https://piccard21.github.io/busy-load/).
 
 
 
