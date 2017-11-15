@@ -391,7 +391,7 @@
         </div>
         <!-- row --> 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card" id="img-01">
                     <div class="card-body">
                         <h4 class="card-title">
@@ -417,7 +417,7 @@
                 </div>
             </div>
             <!-- col -->
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card" id="img-02">
                     <div class="card-body">
                         <h4 class="card-title">
@@ -462,7 +462,7 @@
         </div>
         <!-- row --> 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card" id="fawe-01">
                     <div class="card-body">
                         <h4 class="card-title">
@@ -475,6 +475,8 @@
                             $("#el").busyLoad("show", {
                             <br>
                                 fontawesome: "fa fa-spinner fa-spin fa-3x fa-fw"
+                                    </br>
+                             });
                         </code> 
                         <p>
                         </p>
@@ -485,7 +487,7 @@
                 </div>
             </div>
             <!-- col -->
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card" id="fawe-02">
                     <div class="card-body">
                         <h4 class="card-title">
@@ -498,6 +500,8 @@
                             $("#el").busyLoad("show", {
                             <br>
                                 fontawesome: "fa fa-cog fa-spin fa-3x fa-fw"
+                                    </br>
+                             });
                         </code> 
                         <p>
                         </p>
@@ -542,7 +546,7 @@
       customElement.text(count);
       if (count <= 0) {
           clearInterval(interval);
-          $("#c03 .img-header").busyLoad("hide");
+          $("#el").busyLoad("hide");
           return;
       }
   }, 1000);</code> 
@@ -559,17 +563,92 @@
         </div>
         <!-- row -->
 
+ 
+        <!-- SIZE -->  
+        <div class="row">
+            <div class="col-md">
+                <h2>
+                    Sizing
+                </h2>
+                <p>
+                Use maxSize & minSize for sizing the spinner. This only works with CSS- & image-spinners.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="size-01">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            max/minSize 
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            size
+                        </h6>
+                        <p>
+                            Size a spinner
+                        </p> 
+                        <p class="card-text">
+                        <code>
+                            $("#el").busyLoad("show", { <br>
+                            maxSize: "150px", <br>
+                            minSize: "150px" <br>
+                            });
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info size-01" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="size-02">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            max/minSize 
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            size
+                        </h6>
+                        <p>
+                            Size an image
+                        </p> 
+                        <code>
+                            $("#el").busyLoad("show", {
+                                <br>
+                              maxSize: "200px", 
+                                <br>
+                              minSize: "200px",
+                                <br>
+                              background: "rgba(0, 51, 101, 0.83)",
+                                <br>
+                              image: "tardis"  
+                                <br>
+                                }); 
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info size-02" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col --> 
+        </div>
+        <!-- row -->
 
-// SIZE
 
-
-     <!-- Text --> 
-        <!-- CSS -->
+        <!-- Text -->  
         <div class="row">
             <div class="col-md">
                 <h2>
                     Text
                 </h2>
+                Add text, position & style it. 
             </div>
         </div>
         <div class="row">
@@ -738,6 +817,98 @@
         <!-- row -->
 
 
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="text-07">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            textColor:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            value
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                  text: "LOADING ...",
+                            <br>
+                                  textColor: "white",
+                            <br>
+                                  color: "red",
+                            <br>
+                                  background: "brown"
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info text-07" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-08">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            textMargin:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            size
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                              text: "LOADING ...",
+                            <br>
+                              textMargin: "3rem"
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info text-08" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-09">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            fontSize:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            size
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                              text: "LOADING ...",
+                            <br>
+                              fontSize: "2rem"
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info text-09" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+        </div>
+        <!-- row -->
 
 
     </div>

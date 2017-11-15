@@ -135,6 +135,22 @@ $(function() {
       }
   }, 1000);
 
+    // size
+    $(".size-01").click(function(e) {
+        showHide(e, "#size-01", { 
+          maxSize: "150px", 
+          minSize: "150px"  
+        });
+    }); 
+    $(".size-02").click(function(e) {
+        showHide(e, "#size-02", { 
+          maxSize: "200px", 
+          minSize: "200px",
+          background: "rgba(0, 51, 101, 0.83)",
+          image: "tardis"  
+        });
+    }); 
+
 
     // text
     $(".text-01").click(function(e) {
@@ -172,4 +188,27 @@ $(function() {
           textPosition: "bottom"
         });
     });  
+    $(".text-07").click(function(e) {
+        showHide(e, "#text-07", {  
+          text: "LOADING ...",
+          textColor: "white",
+          color: "red",
+          background: "brown"
+        });
+    });  
+
+    $(".text-08").click(function(e) {
+        showHide(e, "#text-08", {  
+          text: "LOADING ...",
+          textMargin: "3rem"
+        });
+    });  
+
+    $(".text-09").click(function(e) {
+        showHide(e, "#text-09", {  
+          text: "LOADING ...",
+          fontSize: "2rem"
+        });
+    });  
+ 
 });
