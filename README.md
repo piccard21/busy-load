@@ -111,4 +111,4 @@ $.busyLoadSetup({
 
 ## License
 
-Monolog is licensed under the MIT License - see the LICENSE file for details.
+busy-load is licensed under the MIT License - see the LICENSE file for details.

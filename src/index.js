@@ -111,7 +111,7 @@ $(function() {
   let count = 2121;
   let customElement = $("<div>", {
       id: "countdown",
-      css: {
+      css: { 
           "font-size" : "50px"
       },
       text: count
@@ -120,8 +120,8 @@ $(function() {
 
   $(".custom-01").click(function(e) {
       showHide(e, "#custom-01", { 
-    background: "brown",
-    custom: customElement
+        background: "brown",
+        custom: customElement
       });
   }); 
 
@@ -134,4 +134,42 @@ $(function() {
           return;
       }
   }, 1000);
+
+
+    // text
+    $(".text-01").click(function(e) {
+        showHide(e, "#text-01", { 
+          text: "LOADING ..."
+        });
+    }); 
+    $(".text-02").click(function(e) {
+        showHide(e, "#text-02", {  
+          text: "LOADING ...",
+          spinner: false
+        });
+    }); 
+    $(".text-03").click(function(e) {
+        showHide(e, "#text-03", {  
+          text: "LOADING ...",
+          textPosition: "left"
+        });
+    });  
+    $(".text-04").click(function(e) {
+        showHide(e, "#text-04", {  
+          text: "LOADING ...",
+          textPosition: "right"
+        });
+    });  
+    $(".text-05").click(function(e) {
+        showHide(e, "#text-05", {  
+          text: "LOADING ...",
+          textPosition: "top"
+        });
+    });  
+    $(".text-06").click(function(e) {
+        showHide(e, "#text-06", {  
+          text: "LOADING ...",
+          textPosition: "bottom"
+        });
+    });  
 });
