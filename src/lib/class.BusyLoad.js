@@ -48,10 +48,10 @@ export class BusyLoad {
 
             switch (_.get(this.settings, "animation").toLowerCase()) {
                 case "fade": 
-                    $tag = $tag.fadeIn(_.get(this.settings, "animationOptions", "fast"), callback);
+                    $tag = $tag.fadeIn(_.get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 case "slide":
-                    $tag = $tag.slideDown(_.get(this.settings, "animationOptions", "fast"), callback);
+                    $tag = $tag.slideDown(_.get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 default:
                      throw "don't know animation: " +  _.get(this.settings, "animation");
@@ -74,10 +74,10 @@ export class BusyLoad {
         if (_.get(this.settings, "animation",  false)) {
             switch (_.get(this.settings, "animation").toLowerCase()) {
                 case "fade": 
-                    $tag = $tag.fadeOut(_.get(this.settings, "animationOptions", "fast"), callback);
+                    $tag = $tag.fadeOut(_.get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 case "slide":
-                    $tag = $tag.slideUp(_.get(this.settings, "animationOptions", "fast"), callback);
+                    $tag = $tag.slideUp(_.get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 default:
                      throw "don't know animation: " +  _.get(this.settings, "animation");

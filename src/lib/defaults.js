@@ -14,7 +14,7 @@ export default  {
     fontSize: "1rem",
     fullScreen: false, 
     animation: false,	// fade, slide
-    animationOptions: false,	// String, Integer 
+    animationDuration: "fast",	// String, Integer 
     containerClass: "busy-load-container", 
     containerItemClass: "busy-load-container-item", 
     spinnerClass: "busy-load-spinner", 

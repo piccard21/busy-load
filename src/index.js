@@ -231,13 +231,13 @@ $(function() {
     $(".animation-04").click(function(e) {
         showHide(e, "#animation-04", { 
           animation: "fade",
-          animationOptions: "slow"
+          animationDuration: "slow"
         });
     });  
     $(".animation-05").click(function(e) {
         showHide(e, "#animation-05", { 
           animation: "fade",
-          animationOptions: 4000
+          animationDuration: 4000
         });
     });
 
