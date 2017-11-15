@@ -88,25 +88,25 @@ busy-load includes some basic events
 
 Event              | Description       | parameters       
 -------------         | -------------     | -------------    
-bl.show                | before overlay is shown | event, $container, $selectedNode
-bl.shown                | after overlay appeared | event, $container, $selectedNode
-bl.hide                | before overlay disappears | event, $container, $selectedNode
-bl.hidden                | after overlay is removed from DOM | event, $container, $selectedNode
+bl.show                | before overlay is shown | event, $container, $targetNode
+bl.shown                | after overlay appeared | event, $container, $targetNode
+bl.hide                | before overlay disappears | event, $container, $targetNode
+bl.hidden                | after overlay is removed from DOM | event, $container, $targetNode
 
 
 
 ```         
-$(document).on('bl.show', function (event, $container, $selectedNode) {
-  console.log('show: ', event, $container, $selectedNode);
+$(document).on('bl.show', function (event, $container, $targetNode) {
+  console.log('show: ', event, $container, $targetNode);
 });
-$(document).on('bl.shown', function (event, $container, $selectedNode) {
-  console.log('shown: ', event, $container, $selectedNode);
+$(document).on('bl.shown', function (event, $container, $targetNode) {
+  console.log('shown: ', event, $container, $targetNode);
 });
-$(document).on('bl.hide', function (event, $container, $selectedNode) {
-  console.log('hide: ', event, $container, $selectedNode);
+$(document).on('bl.hide', function (event, $container, $targetNode) {
+  console.log('hide: ', event, $container, $targetNode);
 });
-$(document).on('bl.hidden', function (event, $container, $selectedNode) {
-  console.log('hidden: ', event, $container, $selectedNode);
+$(document).on('bl.hidden', function (event, $container, $targetNode) {
+  console.log('hidden: ', event, $container, $targetNode);
 });
 ```        
 
