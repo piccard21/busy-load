@@ -1,6 +1,18 @@
 # busy-load
 
-A simple, but flexible loading-mask plugin for jQuery.
+A simple, but flexible loading-mask plugin for jQuery. The are plenty of options & possibilities to expose an oberlay:
+
+* Overlay
+** animate it like fade or slide in
+** tinker with the options, like background, color ...  
+* Spinners
+** css - select from a collection of pure css-spinners
+** image - use an image as a spinner
+** custom - pass in yout custom jQuery-Element
+* Text
+** show some text 
+** position the text
+** customize your text, like color or margin 
 
 ## Demo
 
@@ -41,7 +53,7 @@ $("#another-element").busyLoad('hide');
 
 ## Options
 
-Here's a list of all options you can use on the plugin
+Here's a list of all default-options you can use and modify on the plugin:
 
 ```    
 color: "#fff",
@@ -68,11 +80,12 @@ textClass: "busy-load-text",  // String
 
 ## Full
 
-For a fullscreen-overlay use **$.busyLoadSetup()**:
+For a fullscreen-overlay use **$.busyLoadFull()**:
 
 ```        
 $.busyLoadFull("show", {
-	background: "blue"
+	background: "blue",
+	image: "tardis"
 });
 $.busyLoadFull("hide");
 ```    
