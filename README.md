@@ -89,14 +89,13 @@ busy-load includes some basic events
 Events              | Description       | parameters       
 -------------         | -------------     | -------------    
 bl.show                | before overlay is shown | $container, $selectedNode
-bl.shown                | after overlay is shown | $container, $selectedNode
-bl.hide                | after overlay disappears | $container, $selectedNode
+bl.shown                | after overlay appeared | $container, $selectedNode
+bl.hide                | before overlay disappears | $container, $selectedNode
 bl.hidden                | after overlay is removed from DOM | $container, $selectedNode
 
 
 
-```        
-// event
+```         
 $(document).on('bl.show', function (event, $container, $selectedNode) {
   console.log('show: ', event, $container, $selectedNode);
 });
