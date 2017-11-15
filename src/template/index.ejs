@@ -519,13 +519,14 @@
         <div class="row">
             <div class="col-md">
                 <h4>Custom</h4> 
+                <p>
+                    Pass in your own jQuery-Element. Here's a quick example:
+                </p>
             </div>
         </div>
         <!-- row --> 
         <div class="row">
             <div class="col-md-6">
-                Pass in your own jQuery-Element. Here's a quick example:
-
                 <code class="code-pre">
   let count = 1125;
   let customElement = $("&lt;div&gt;", {
@@ -826,7 +827,7 @@
                             textColor:
                         </h4>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            value
+                            color
                         </h6>
                         <code>
                             $("#el").busyLoad("show", {
@@ -911,6 +912,157 @@
         <!-- row -->
 
 
+        <!-- Animation -->  
+        <div class="row">
+            <div class="col-md">
+                <h2>
+                    Animation
+                </h2> 
+            </div>
+        </div>
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="animation-01">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            animation:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            false
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                animation: false 
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info animation-01" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="animation-02">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            animation:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            fade
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                animation: "fade"
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info animation-02" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="animation-03">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            animation:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            slide
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                                animation: "slide"
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info animation-03" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+        </div>
+        <!-- row -->
+
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="animation-04">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            animationOptions:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            slow
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                              animation: "fade",
+                            <br>
+                              animationOptions: "slow"
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info animation-04" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="animation-05">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            animationOptions:
+                        </h4>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            time
+                        </h6>
+                        <code>
+                            $("#el").busyLoad("show", {
+                            <br>
+                              animation: "fade",
+                            <br>
+                              animationOptions: 4000
+                            <br>
+                                });
+                            </br>
+                        </code>
+                        <p>
+                        </p>
+                        <a class="btn btn-info animation-05" href="#">
+                            show
+                        </a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- row -->
     </div>
     <!-- container -->
 </body>

@@ -69,7 +69,7 @@ custom: false, // jQuery Element
 spinner: "pump", // use one of the built-in css-spinners: pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid
 fullScreen: false, // Boolean or use $.busyLoadFull()
 animation: false,	// Boolean/String - fade, slide 
-animationOptions: false,	// String, Integer, Object - same as jQuery
+animationOptions: false,	// String, Integer - slow/fast, 4000ms
 maxSize: "50px", // Integer/String only for spinners & images, not fontawesome & custom
 minSize: "20px", // Integer/String only for spinners & images, not fontawesome & custom 
 textPosition: "right", // left, right, top, bottom - default: right  

@@ -211,4 +211,33 @@ $(function() {
         });
     });  
  
+
+    // animation
+    $(".animation-01").click(function(e) {
+        showHide(e, "#animation-01", {  
+          animation: false 
+        });
+    }); 
+    $(".animation-02").click(function(e) {
+        showHide(e, "#animation-02", { 
+          animation: "fade"
+        });
+    }); 
+    $(".animation-03").click(function(e) {
+        showHide(e, "#animation-03", { 
+          animation: "slide"
+        });
+    });  
+    $(".animation-04").click(function(e) {
+        showHide(e, "#animation-04", { 
+          animation: "fade",
+          animationOptions: "slow"
+        });
+    });  
+    $(".animation-05").click(function(e) {
+        showHide(e, "#animation-05", { 
+          animation: "fade",
+          animationOptions: 4000
+        });
+    });
 });
