@@ -6,7 +6,7 @@ export default  {
     color: "#fff",
     background: "rgba(0, 0, 0, 0.21)",
     maxSize: "50px", // Integer/String only for spinners & images, not fontawesome & custom
-    minSize: "20px", // Integer/String 
+    minSize: "20px", // Integer/String only for spinners & images, not fontawesome & custom
     text: false,
     textColor: false, // default is color
     textMargin: ".5rem", 
@@ -14,10 +14,9 @@ export default  {
     fontSize: "1rem",
     fullScreen: false, 
     animation: false,	// fade, slide
-    animationOptions: false,	// String, Integer, Object - same as in jQuery
-    containerClass: "busy-load-container", // String 
-    containerItemClass: "busy-load-container-item",  // String 
-    spinnerClass: "busy-load-spinner",  // String 
-    textClass: "busy-load-text",  // String  
-    // addOn 
+    animationOptions: false,	// String, Integer 
+    containerClass: "busy-load-container", 
+    containerItemClass: "busy-load-container-item", 
+    spinnerClass: "busy-load-spinner", 
+    textClass: "busy-load-text",  
 };

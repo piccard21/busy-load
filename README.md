@@ -73,9 +73,9 @@ textColor 		          | color of the  | color-value      | default is color
 textMargin 		          | margin of the text - works on every textPosition | size-value   | false
 textPosition 		          | where should the text appear | top, bottom, left, right   | right
 animation 		          | use an animation, when overlay appears or hides| fade, slide | false 
-animationOption 		          | pass in duration of animation | slow, fast, integer in ms | fast 
+animationDuration 		          | pass in duration of animation | slow, fast, integer in ms | fast 
 containerClass 		          | add a class to the overlay-container | class-name | busy-load-container 
-containerItemClass 		          | add a class to the container-item | class-name | busy-load-container-item"
+containerItemClass 		          | add a class to the container-item | class-name | busy-load-container-item
 spinnerClass 		          | add a class to the spinner | class-name | busy-load-spinner
 textClass 		          | add a class to the text | class-name | busy-load-text
 
