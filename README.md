@@ -66,10 +66,10 @@ fontawesome   		  | use a fontawesome-icon as spinner  | $("#el")  | false
 custom        		  | use a custom jQuery-element as spinner  | source for image (location, string)  | false
 color             	  | color of the spinner  | color-value   | #fff
 background             	  | background of the overlay  | color-value   | rgba(0, 0, 0, 0.21)
-maxSize        		  | max-size of the spinner  | size-value  | "50px"
-minSize        		  | min-size of the spinner  | size-value  | "20px"
+maxSize        		  | max-size of the spinner  | size-value  | 50px
+minSize        		  | min-size of the spinner  | size-value  | 20px
 text 		          | text next to the spinner | String or false   | false
-textColor 		          | color of the  | color-value      | default is color
+textColor 		          | color of the text | color-value      | default is color
 textMargin 		          | margin of the text - works on every textPosition | size-value   | false
 textPosition 		          | where should the text appear | top, bottom, left, right   | right
 animation 		          | use an animation, when overlay appears or hides| fade, slide | false 
@@ -81,6 +81,35 @@ textClass 		          | add a class to the text | class-name | busy-load-text
 
 
 To see them in action and learn how to use them [goto this place](https://piccard21.github.io/busy-load/).
+
+## Events
+
+busy-load includes some basic events
+
+Events              | Description       | parameters       
+-------------         | -------------     | -------------    
+bl.show                | before overlay is shown | $container, $selectedNode
+bl.shown                | after overlay is shown | $container, $selectedNode
+bl.hide                | after overlay disappears | $container, $selectedNode
+bl.hidden                | after overlay is removed from DOM | $container, $selectedNode
+
+
+
+```        
+// event
+$(document).on('bl.show', function (event, $container, $selectedNode) {
+  console.log('show: ', event, $container, $selectedNode);
+});
+$(document).on('bl.shown', function (event, $container, $selectedNode) {
+  console.log('shown: ', event, $container, $selectedNode);
+});
+$(document).on('bl.hide', function (event, $container, $selectedNode) {
+  console.log('hide: ', event, $container, $selectedNode);
+});
+$(document).on('bl.hidden', function (event, $container, $selectedNode) {
+  console.log('hidden: ', event, $container, $selectedNode);
+});
+```        
 
 
 
