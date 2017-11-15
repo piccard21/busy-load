@@ -86,12 +86,12 @@ To see them in action and learn how to use them [goto this place](https://piccar
 
 busy-load includes some basic events
 
-Events              | Description       | parameters       
+Event              | Description       | parameters       
 -------------         | -------------     | -------------    
-bl.show                | before overlay is shown | $container, $selectedNode
-bl.shown                | after overlay appeared | $container, $selectedNode
-bl.hide                | before overlay disappears | $container, $selectedNode
-bl.hidden                | after overlay is removed from DOM | $container, $selectedNode
+bl.show                | before overlay is shown | event, $container, $selectedNode
+bl.shown                | after overlay appeared | event, $container, $selectedNode
+bl.hide                | before overlay disappears | event, $container, $selectedNode
+bl.hidden                | after overlay is removed from DOM | event, $container, $selectedNode
 
 
 
@@ -112,7 +112,7 @@ $(document).on('bl.hidden', function (event, $container, $selectedNode) {
 
 
 
-## Full
+## Fullscreen
 
 For a fullscreen-overlay use **$.busyLoadFull()**:
 
