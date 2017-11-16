@@ -21,22 +21,16 @@ You can find some examples [here](https://piccard21.github.io/busy-load/).
 
 ## Getting started
 
-* Install from **npm** 
- 
-```
-npm i busy-load
-```
-
-... or **cdn** and include jquery and **busy-load** in your page:
+Add jQuery and then busy-load ...
 
 ```
 <script src="http://code.jquery.com/jquery-3.2.1.min.js" </script>
 
-<script src="jquery.loading.js"></script>
-<link href="jquery.loading.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.css" rel="stylesheet">
 ```
 
-* Call the plugin from your element:
+* ... and call the plugin from your element:
 
 ```
 $("#some-element").busyLoad('show');
@@ -51,6 +45,23 @@ $("#another-element").busyLoad('show', {
 $("#another-element").busyLoad('hide');
 
 ```
+
+
+## Installation
+
+Like you have seen above, just include it via cdn or add it using npm: 
+ 
+```
+npm i busy-load
+```
+
+Copy the files of the **dist** folder wherever you want them or require the package in your own code:
+
+```
+require('busy-load'); 
+```
+
+
 
 ## Options
 

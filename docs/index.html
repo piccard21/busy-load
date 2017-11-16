@@ -1,9 +1,596 @@
-<!DOCTYPE html>
+<!DOCTYPE doctype>
 <html>
 <head>
-	<title>busy-load</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="{{ csrf_token() }}" name="csrf-token">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
+    </script>
+
+    <!-- busy-load -->
+    <link href="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.js">
+    </script>
+
+    <!-- Styles -->
+    <style>
+               html, body {
+                   background-color: #fff;
+                   color: #636b6f;
+                   font-family: 'Raleway', sans-serif;
+                   font-weight: 100;
+                   height: 100vh;
+                   margin: 0;
+               }
+
+               .row {
+                   padding: 1rem 0;
+               }
+
+
+               .bg {
+                   background: rgba(255, 152, 0, 0.86);    
+                   padding: 2.5rem; 
+                   color: #fff;
+               }
+               .bg-footer {
+                   background: rgba(255, 152, 0, 0.86);     
+                   color: #fff;
+               }
+               .bg-footer p.lead {
+                   margin-bottom: 0;
+                   padding: .5rem;
+                    font-size: .9rem;
+               }
+
+               code {
+                   margin: 1rem 0;  
+               }
+               .code-pre { 
+                   white-space: pre; 
+               }
+
+               .flex-me {
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+               }
+
+               .my-own-container-class {
+                   background: red !important; 
+               }
+               .my-own-container-item-class {
+                   background: pink !important; 
+               
+               }
+               .my-own-spinner-class {
+                   background: brown !important; 
+               
+               }
+               .my-own-text-class {
+                   color: red !important; 
+               }
+    </style>
 </head>
 <body>
-<h1>html</h1>
+    <!-- header -->
+    <div class="bg">
+        <h1>busy-load</h1>
+        <p class="lead">A simple, but flexible loading-mask plugin for jQuery</p>
+        <p><a class="btn btn-info btn-sm" href="https://github.com/piccard21/busy-load">Download on Github</a> <a class="btn btn-info btn-sm" href="https://github.com/piccard21/busy-load">Download on npm</a> <a class="btn btn-info btn-sm" href="https://github.com/piccard21/busy-load">use cdn</a></p>
+    </div><!-- content -->
+    <div class="container">
+        <!-- documentation -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Documentation</h2>
+                <p>See the full documentation on <a href="https://github.com/piccard21/busy-load">github</a> .</p>
+            </div>
+        </div>
+    </div><!-- container -->
+    <div class="container">
+        <!-- Setup -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Setup</h2>
+                <p>Use <strong>$.busyLoadSetup()</strong> to preconfigure busy-load, so you don't have to set your default options all the time.</p><code>$.busyLoadSetup({ animation: "slide", background: "rgba(255, 152, 0, 0.86)" });</code>
+            </div>
+        </div><!-- Fullscreen -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Fullscreen</h2>
+                <p>For a fullscreen-overlay use <strong>$.busyLoadFull()</strong></p><code>$.busyLoadFull("show", { background: "rgba(0, 51, 101, 0.83)", image: "tardis", animate: "slide" });</code><br>
+                <code>$.busyLoadFull("hide", { animate: "fade" });</code><br>
+                <br>
+                <button class="btn btn-info btn-fullscreen" type="button">Fullscreen</button>
+            </div>
+        </div>
+    </div><!-- container -->
+    <div class="container">
+        <!-- Spinners -->
+        <!-- CSS -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Spinners</h2>
+                <h4>CSS</h4>
+                <p>Choose one of the built in CSS-spinners.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="spinner-01">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">pump</h6>
+                        <p class="card-text">Without any options, the default spinner will be <strong>pump</strong></p><code>$("#el").busyLoad("show");</code>
+                        <p></p><a class="btn btn-info spinner-01" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="spinner-02">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">accordion</h6><code>$("#el").busyLoad("show", { spinner: "accordion"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="spinner-03">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">pulsar</h6><code>$("#el").busyLoad("show", { spinner: "pulsar"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-03" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="spinner-04">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">cube</h6><code>$("#el").busyLoad("show", { spinner: "cube"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-04" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="spinner-05">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">cubes</h6><code>$("#el").busyLoad("show", { spinner: "cubes"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-05" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="spinner-06">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">circle-line</h6><code>$("#el").busyLoad("show", { spinner: "circle-line"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-06" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="spinner-07">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">circles</h6><code>$("#el").busyLoad("show", { spinner: "circles"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-07" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="spinner-08">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">cube-grid</h6><code>$("#el").busyLoad("show", { spinner: "cube-grid"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info spinner-08" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container">
+        <!-- IMAGE -->
+        <div class="row">
+            <div class="col-md">
+                <h4>Images</h4>
+                <p>Use an image as spinner.</p>
+            </div>
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="img-01">
+                    <div class="card-body">
+                        <h4 class="card-title">image:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">source</h6><code>$("#el").busyLoad("show", { background: "rgba(76, 175, 80, 0.73)",<br>
+                        image: "data:image/gif;base64,R0lGODlhQAA..."<br>
+                        });</code>
+                        <p></p><a class="btn btn-info img-01" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="img-02">
+                    <div class="card-body">
+                        <h4 class="card-title">image:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">tardis</h6>
+                        <p>An image is already included, base64 encoded.</p><code>$("#el").busyLoad("show", {<br>
+                        image: "tardis",<br>
+                        background: "rgba(0, 51, 101, 0.83)"<br>
+                        });</code> <a class="btn btn-info img-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container">
+        <!-- FONTAWESOME -->
+        <div class="row">
+            <div class="col-md">
+                <h4>Fontawesome</h4>
+                <p>Include the fontawesome-library and use its spinners.</p>
+            </div>
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="fawe-01">
+                    <div class="card-body">
+                        <h4 class="card-title">fontawesome:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">icon class</h6>
+                        <p>add also fa-spin</p><code>$("#el").busyLoad("show", {<br>
+                        fontawesome: "fa fa-spinner fa-spin fa-3x fa-fw" });</code>
+                        <p></p><a class="btn btn-info fawe-01" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="fawe-02">
+                    <div class="card-body">
+                        <h4 class="card-title">fontawesome:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">icon class</h6>
+                        <p>add also fa-spin</p><code>$("#el").busyLoad("show", {<br>
+                        fontawesome: "fa fa-cog fa-spin fa-3x fa-fw" });</code>
+                        <p></p><a class="btn btn-info fawe-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container">
+        <!-- CUSTOM -->
+        <div class="row">
+            <div class="col-md">
+                <h4>Custom</h4>
+                <p>Pass in your own jQuery-Element. Here's a quick example:</p>
+            </div>
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <code class="code-pre">let count = 1125; let customElement = $("&lt;div&gt;", { id: "countdown", css: { "font-size" : "50px" }, text: count }); $("#el").busyLoad("show", { background: "brown", custom: customElement }); let interval = setInterval(function(){ count--; customElement.text(count); if (count &lt;= 0) { clearInterval(interval); $("#el").busyLoad("hide"); return; } }, 1000);</code>
+            </div>
+            <div class="col-md-6 flex-me" id="custom-01">
+                <p><a class="btn btn-info custom-01" href="#">show</a></p>
+            </div>
+        </div><!-- col -->
+    </div><!-- row -->
+    <!-- container -->
+    <div class="container">
+        <!-- SIZE -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Sizing</h2>
+                <p>Use maxSize & minSize for sizing the spinner. This only works with CSS- & image-spinners.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="size-01">
+                    <div class="card-body">
+                        <h4 class="card-title">max/minSize</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">size</h6>
+                        <p>Size a spinner</p>
+                        <p class="card-text"><code>$("#el").busyLoad("show", {<br>
+                        maxSize: "150px",<br>
+                        minSize: "150px"<br>
+                        });</code></p>
+                        <p></p><a class="btn btn-info size-01" href="#">show</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="size-02">
+                    <div class="card-body">
+                        <h4 class="card-title">max/minSize</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">size</h6>
+                        <p>Size an image</p><code>$("#el").busyLoad("show", {<br>
+                        maxSize: "200px",<br>
+                        minSize: "200px",<br>
+                        background: "rgba(0, 51, 101, 0.83)",<br>
+                        image: "tardis"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info size-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container">
+        <!-- Text -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Text</h2>Add text, position & style it.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="text-01">
+                    <div class="card-body">
+                        <h4 class="card-title">text:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">LOADING ...</h6>
+                        <p class="card-text"><code>$("#el").busyLoad("show", { text: "LOADING ..."<br>
+                        });</code></p>
+                        <p></p><a class="btn btn-info text-01" href="#">show</a>
+                        <p></p>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-02">
+                    <div class="card-body">
+                        <h4 class="card-title">spinner:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">false</h6>
+                        <p>Explicitly hide the spinner.</p><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
+                        spinner: false<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-03">
+                    <div class="card-body">
+                        <h4 class="card-title">textPosition:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">left</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
+                        textPosition: "left"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-03" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="text-04">
+                    <div class="card-body">
+                        <h4 class="card-title">textPosition:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">right</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
+                        textPosition: "right"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-04" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-05">
+                    <div class="card-body">
+                        <h4 class="card-title">textPosition:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">top</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
+                        textPosition: "top"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-05" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-06">
+                    <div class="card-body">
+                        <h4 class="card-title">textPosition:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">bottom</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
+                        textPosition: "bottom"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-06" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="text-07">
+                    <div class="card-body">
+                        <h4 class="card-title">textColor:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">color</h6><code>$("#el").busyLoad("show", {<br>
+                        text: "LOADING ...",<br>
+                        textColor: "white",<br>
+                        color: "red",<br>
+                        background: "brown"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-07" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-08">
+                    <div class="card-body">
+                        <h4 class="card-title">textMargin:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">size</h6><code>$("#el").busyLoad("show", {<br>
+                        text: "LOADING ...",<br>
+                        textMargin: "3rem"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-08" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="text-09">
+                    <div class="card-body">
+                        <h4 class="card-title">fontSize:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">size</h6><code>$("#el").busyLoad("show", {<br>
+                        text: "LOADING ...",<br>
+                        fontSize: "2rem"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info text-09" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container">
+        <!-- Animation -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Animation</h2>
+            </div>
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="animation-01">
+                    <div class="card-body">
+                        <h4 class="card-title">animation:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">false</h6><code>$("#el").busyLoad("show", {<br>
+                        animation: false<br>
+                        });</code>
+                        <p></p><a class="btn btn-info animation-01" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="animation-02">
+                    <div class="card-body">
+                        <h4 class="card-title">animation:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">fade</h6><code>$("#el").busyLoad("show", {<br>
+                        animation: "fade"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info animation-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="animation-03">
+                    <div class="card-body">
+                        <h4 class="card-title">animation:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">slide</h6><code>$("#el").busyLoad("show", {<br>
+                        animation: "slide"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info animation-03" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" id="animation-04">
+                    <div class="card-body">
+                        <h4 class="card-title">animationDuration:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">slow/fast</h6><code>$("#el").busyLoad("show", {<br>
+                        animation: "fade",<br>
+                        animationDuration: "slow"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info animation-04" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-4">
+                <div class="card" id="animation-05">
+                    <div class="card-body">
+                        <h4 class="card-title">animationDuration:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">time</h6><code>$("#el").busyLoad("show", {<br>
+                        animation: "fade",<br>
+                        animationDuration: 4000<br>
+                        });</code>
+                        <p></p><a class="btn btn-info animation-05" href="#">show</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container">
+        <!-- Classes -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Classes</h2>
+                <p>Add your own-classes to the components of the overlay.</p>
+            </div>
+        </div><!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="class-01">
+                    <div class="card-body">
+                        <h4 class="card-title">containerClass:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">class</h6><code>$("#el").busyLoad("show", {<br>
+                        containerClass: "my-own-container-class"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info class-01" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="class-02">
+                    <div class="card-body">
+                        <h4 class="card-title">containerItemClass:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">class</h6><code>$("#el").busyLoad("show", {<br>
+                        containerItemClass: "my-own-container-item-class"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info class-02" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" id="class-03">
+                    <div class="card-body">
+                        <h4 class="card-title">spinnerClass:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">class</h6><code>$("#el").busyLoad("show", {<br>
+                        spinnerClass: "my-own-spinner-class"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info class-03" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+            <div class="col-md-6">
+                <div class="card" id="class-04">
+                    <div class="card-body">
+                        <h4 class="card-title">textClass:</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">class</h6><code>$("#el").busyLoad("show", {<br>
+                        textClass: "my-own-text-class"<br>
+                        });</code>
+                        <p></p><a class="btn btn-info class-04" href="#">show</a>
+                    </div>
+                </div>
+            </div><!-- col -->
+        </div><!-- container -->
+    </div>
+    <!-- footer -->
+    <div class="bg-footer">
+        <p class="lead">&copy;2017 Andreas Stephan</p>
+    </div>
 </body>
 </html>

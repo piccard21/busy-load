@@ -12,13 +12,24 @@
     "production": "npm run development & cross-env NODE_ENV=PRODUCTION webpack --progress --hide-modules",
     "start": "cross-env NODE_ENV=DEVELOPMENT-SERVER webpack-dev-server --open"
   },
-  "keywords": [],
+  "homepage": "https://github.com/piccard21/busy-load",
+  "keywords": [
+    "jQuery-plugin",
+    "loading-mask",
+    "overlay",
+    "loader"
+  ],
+  "repository":{ 
+    "type" : "git",
+    "url" : "https://github.com/piccard21/busy-load"
+  },
   "author": "Andreas Stephan <info@cafe-serendipity.com> (info@cafe-serendipity.com)",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.17",
     "cross-env": "^5.1.1",
@@ -35,7 +46,5 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
     "lodash": "^4.17.4"
-  },
-  "dependencies": {
   }
 }
