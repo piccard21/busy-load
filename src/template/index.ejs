@@ -286,13 +286,29 @@
         </div><!-- row -->
         <div class="row">
             <div class="col-md-6">
-                <code class="code-pre">let count = 1125; let customElement = $("&lt;div&gt;", { id: "countdown", css: { "font-size" : "50px" }, text: count }); $("#el").busyLoad("show", { background: "brown", custom: customElement }); let interval = setInterval(function(){ count--; customElement.text(count); if (count &lt;= 0) { clearInterval(interval); $("#el").busyLoad("hide"); return; } }, 1000);</code>
+                <code class="code-pre">let count = 1125; 
+let customElement = $("&lt;div&gt;", { 
+    id: "countdown", 
+    css: { "font-size" : "50px" }, text: count 
+}); 
+$("#el").busyLoad("show", { 
+    background: "brown", custom: customElement 
+}); 
+let interval = setInterval(function(){ 
+    count--; 
+    customElement.text(count); 
+    if (count &lt;= 0) { 
+        clearInterval(interval); 
+        $("#el").busyLoad("hide"); 
+        return; 
+    } 
+}, 1000);</code>
             </div>
             <div class="col-md-6 flex-me" id="custom-01">
                 <p><a class="btn btn-info custom-01" href="#">show</a></p>
             </div>
         </div><!-- col -->
-    </div><!-- row -->
+    </div><!-- row --> 
     <!-- container -->
     <div class="container">
         <!-- SIZE -->
