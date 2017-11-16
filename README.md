@@ -72,7 +72,7 @@ Here's a full list of all the default-options you can use and modify on the plug
 Property              | Description       | value      | Default value
 -------------         | -------------     | -------------    | -------------
 action                | show or hide the overlay | show, hide | -
-spinnerClass          | a CSS-spinner     | pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid | pump
+spinner           | a CSS-spinner     | pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid | pump
 image        		  | use an image as spinner  | source for image (location, string)  | false
 fontawesome   		  | use a fontawesome-icon as spinner  | $("#el")  | false
 custom        		  | use a custom jQuery-element as spinner  | source for image (location, string)  | false
