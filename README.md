@@ -61,6 +61,7 @@ Copy the files of the **dist** folder wherever you want them or require the pack
 require('busy-load'); 
 ```
 
+Don't forget to include the css as well.
 
 
 ## Options
