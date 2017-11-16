@@ -2,7 +2,7 @@
 // primary module-configuration
 const libraryVarName = 'busyLoad';
 const libraryTarget = 'umd';
-const sourcemap = (process.env.NODE_ENV === 'PRODUCTION') ? true : false;
+const sourcemap = false;
 const htmlTitle = 'busy-load';
 
 // general vars
