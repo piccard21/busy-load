@@ -22,6 +22,35 @@
     <script src="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.js">
     </script>
 
+    <script>
+        $.busyLoadSetup({
+            animation: "slide",
+            background: "rgba(255, 152, 0, 0.86)"
+        });
+        let showHide = (event, tag, options = {}) => {
+            event.preventDefault();
+            event.stopPropagation();
+            $(tag).busyLoad("show", options);
+            $(tag).click(".busy-load-container", function() {
+                $(tag).busyLoad("hide");
+            });
+        }
+        // fullscreen
+        $('.btn-fullscreen').click(function() {
+            $.busyLoadFull('show', {
+                background: "rgba(0, 51, 101, 0.83)",
+                image: "tardis",
+                animation: "slide"
+            });
+
+            $("body>.busy-load-container").click(function(){
+              $.busyLoadFull('hide', {
+                animation: "fade"
+              });
+            }); 
+        })
+    </script>
+
     <!-- Styles -->
     <style>
                html, body {
