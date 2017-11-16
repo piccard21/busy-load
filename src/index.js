@@ -8,7 +8,6 @@ window._ = require('lodash');
 
 
 
-
 // trigger busy-load
 $(function() {
 
@@ -16,32 +15,32 @@ $(function() {
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
 
-    // $.busyLoadSetup({
-    //     animation: "slide",
-    //     background: "rgba(255, 152, 0, 0.86)"
-    // });
-    // let showHide = (event, tag, options = {}) => {
-    //     event.preventDefault();
-    //     event.stopPropagation();
-    //     $(tag).busyLoad("show", options);
-    //     $(tag).click(".busy-load-container", function() {
-    //         $(tag).busyLoad("hide");
-    //     });
-    // }
-    // // fullscreen
-    // $('.btn-fullscreen').click(function() {
-    //     $.busyLoadFull('show', {
-    //         background: "rgba(0, 51, 101, 0.83)",
-    //         image: "tardis",
-    //         animation: "slide"
-    //     });
+  // $.busyLoadSetup({
+  //     animation: "slide",
+  //     background: "rgba(255, 152, 0, 0.86)"
+  // });
+  // let showHide = (event, tag, options = {}) => {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //     $(tag).busyLoad("show", options);
+  //     $(tag).click(".busy-load-container", function() {
+  //         $(tag).busyLoad("hide");
+  //     });
+  // }
+  // // fullscreen
+  // $('.btn-fullscreen').click(function() {
+  //     $.busyLoadFull('show', {
+  //         background: "rgba(0, 51, 101, 0.83)",
+  //         image: "tardis",
+  //         animation: "slide"
+  //     });
 
-    //     $("body>.busy-load-container").click(function(){
-    //       $.busyLoadFull('hide', {
-    //         animation: "fade"
-    //       });
-    //     }); 
-    // })
+  //     $("body>.busy-load-container").click(function(){
+  //       $.busyLoadFull('hide', {
+  //         animation: "fade"
+  //       });
+  //     }); 
+  // })
 
   //   // spinners
   //   $(".spinner-01").click(function(e) {
