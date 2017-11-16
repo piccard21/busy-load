@@ -26,8 +26,8 @@ Add jQuery and then busy-load ...
 ```
 <script src="http://code.jquery.com/jquery-3.2.1.min.js" </script>
 
-<script src="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/busy-load@0.0.1/dist/app.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.css" rel="stylesheet">
 ```
 
 * ... and call the plugin from your element:
@@ -49,7 +49,7 @@ $("#another-element").busyLoad('hide');
 
 ## Installation
 
-Like you have seen above, just include it via cdn or add it using npm: 
+Like you have seen above, just include it via [cdn](https://www.jsdelivr.com/package/npm/busy-load) or add it using npm: 
  
 ```
 npm i busy-load
