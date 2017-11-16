@@ -1,7 +1,7 @@
 {
   "name": "busy-load",
   "version": "0.0.1",
-  "description": "A flexible loading-mask as jQuery-plugin.",
+  "description": "A flexible jQuery loading-mask",
   "main": "dist/app.js",
   "scripts": {
     "test": "mocha --reporter spec",
@@ -17,6 +17,7 @@
     "jQuery-plugin",
     "loading-mask",
     "overlay",
+    "mask",
     "loader"
   ],
   "repository":{ 

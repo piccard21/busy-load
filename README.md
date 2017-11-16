@@ -152,3 +152,7 @@ $.busyLoadSetup({
 ## License
 
 busy-load is licensed under the MIT License - see the LICENSE file for details.
+
+
+## Author
+[Andreas Stephan](https://cafe-serendipity.com)
