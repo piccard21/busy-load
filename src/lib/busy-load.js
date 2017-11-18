@@ -20,6 +20,8 @@ export function busyLoad(action, options) {
         default:
             throw `don't know action '${action}'`
     }
+
+    return this;
 }
 
 
