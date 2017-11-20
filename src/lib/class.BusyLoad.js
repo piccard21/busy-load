@@ -127,6 +127,7 @@ export class BusyLoad {
         if(action == 'show') {
             const randomString = this.createRandomString(); 
 
+            this._caller.addClass('busy-load-active');
             $tag.attr('id', randomString);
             $tag = this.animateShow($tag);
  
@@ -136,6 +137,7 @@ export class BusyLoad {
         else {  
             this.animateHide($tag);
             this._caller.removeData("busy-load-container");
+            this._caller.removeClass('busy-load-active');
         }
     } 
 

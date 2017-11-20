@@ -15,6 +15,10 @@ $ = jQuery = require('jquery');
     $.busyLoadFull = busyLoadFull;
     $.fn.busyLoad.defaults = defaults;
 
+// alle settings testen
+// _.get alleine
+// active
+// travis
 
     //     $.busyLoadSetup({
     //     animation: "slide",

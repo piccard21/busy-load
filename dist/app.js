@@ -26258,6 +26258,11 @@ $ = jQuery = __webpack_require__(340);
     $.busyLoadFull = _busyLoad.busyLoadFull;
     $.fn.busyLoad.defaults = _defaults2.default;
 
+    // alle settings testen
+    // _.get alleine
+    // active
+    // travis
+
     //     $.busyLoadSetup({
     //     animation: "slide",
     //     background: "rgba(255, 152, 0, 0.86)"
@@ -26507,6 +26512,7 @@ var BusyLoad = exports.BusyLoad = function () {
             if (action == 'show') {
                 var randomString = this.createRandomString();
 
+                this._caller.addClass('busy-load-active');
                 $tag.attr('id', randomString);
                 $tag = this.animateShow($tag);
 
@@ -26516,6 +26522,7 @@ var BusyLoad = exports.BusyLoad = function () {
             else {
                     this.animateHide($tag);
                     this._caller.removeData("busy-load-container");
+                    this._caller.removeClass('busy-load-active');
                 }
         }
     }, {
