@@ -17,11 +17,11 @@ describe('functions are available', function() {
     });
 });
 describe('busy-load core', function() {
-    it('$.busyLoadSetup & $.fn.busyLoad.defaults', function() {
-        $.busyLoadSetup({
+    it('$.fn.busyLoad.defaults. is same as from $.busyLoadSetup', function() {
+    	$.busyLoadSetup({
             color: "green"
-        });
-        expect($.fn.busyLoad.defaults.color).to.be.equal('green');
+        });   
+        expect($.fn.busyLoad.defaults.color).to.be.equal('green'); 
     });
     it('$.busyLoadFull("show") without options', function() {
         $.busyLoadFull('show');
@@ -39,6 +39,14 @@ describe('busy-load core', function() {
         $('#maskme').busyLoad('hide');
         expect($('#maskme>.busy-load-container')).not.to.exist;
     });
+    it('caller gets active class', function() {
+        $('#maskme').busyLoad('show');
+        expect($('#maskme')).to.have.class('busy-load-active'); 
+    });
+    it('caller removes active class', function() { 
+        $('#maskme').busyLoad('hide');
+        expect($('#maskme')).not.to.have.class('busy-load-active');
+    });
 });
 describe('busy-load components', function() {
     before(function() {
@@ -48,9 +56,6 @@ describe('busy-load components', function() {
     });
     after(function() {
         $('#maskme').busyLoad('hide');
-    });
-    it('caller has active class', function() {
-        expect($('#maskme')).to.have.class('busy-load-active');
     });
     it('container exists', function() {
         expect($('#maskme>.busy-load-container')).to.exist;
@@ -124,6 +129,9 @@ describe('busy-load settings', function() {
         expect($('#maskme .busy-load-spinner')).to.have.css('max-height', '21px'); 
     });
     it('text matches', function() {
+        $('#maskme').busyLoad('show', {
+            "text": "Loading" 
+        });
         expect($('#maskme>.busy-load-container>.busy-load-container-item>.busy-load-text').text()).to.contain('Loading');
     });
     it('text matches also text with blanks', function() {
@@ -140,9 +148,43 @@ describe('busy-load settings', function() {
         expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 21, 255)'); 
     });
     it('textColor default is color', function() {
+        $.fn.busyLoad.defaults.color = 'rgb(0, 128, 128)';
         $('#maskme').busyLoad('show', {
             "text": "Loading"
         }); 
-        expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 128, 0)'); // green
+        expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 128, 128)');
+    });
+    it('set textMargin & position', function() {
+        $('#maskme').busyLoad('show', {
+            "text": "Loading",
+            "textPosition": "top",
+            "textMargin": "10px",
+        }); 
+        expect($('#maskme .busy-load-text')).to.have.css('margin-bottom', '10px'); 
+    });
+    it('set containerClass', function() {
+        $('#maskme').busyLoad('show', {
+            "containerClass": "something-special", 
+        }); 
+        expect($('#maskme .something-special')).to.exist;
+    });
+    it('set containerItemClass', function() {
+        $('#maskme').busyLoad('show', {
+            "containerItemClass": "something-very-special", 
+        }); 
+        expect($('#maskme .something-very-special')).to.exist;
+    });
+    it('set spinnerClass', function() {
+        $('#maskme').busyLoad('show', {
+            "spinnerClass": "something-very-very-special", 
+        }); 
+        expect($('#maskme .something-very-very-special')).to.exist;
+    });
+    it('set textClass', function() {
+        $('#maskme').busyLoad('show', {
+        	"text": "Loading",
+            "textClass": "something-very-very-very-special", 
+        }); 
+        expect($('#maskme .something-very-very-very-special')).to.exist;
     });
 });

@@ -14,10 +14,8 @@ $ = jQuery = require('jquery');
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
     $.fn.busyLoad.defaults = defaults;
-
-// alle settings testen
-// _.get alleine
-// active
+ 
+// _.get alleine 
 // travis
 
     //     $.busyLoadSetup({
