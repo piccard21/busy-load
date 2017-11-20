@@ -23,7 +23,7 @@ describe('busy-load core', function() {
         });
         expect($.fn.busyLoad.defaults.color).to.be.equal('green');
     });
-    it('$.busyLoadFull("show")', function() {
+    it('$.busyLoadFull("show") without options', function() {
         $.busyLoadFull('show');
         expect($('body>.busy-load-container')).to.exist;
     });
@@ -38,13 +38,6 @@ describe('busy-load core', function() {
     it('busyLoad("hide")', function() {
         $('#maskme').busyLoad('hide');
         expect($('#maskme>.busy-load-container')).not.to.exist;
-    });
-    it('busyLoad("show") with options', function() {
-        $('#maskme').busyLoad('show', {
-            "background": "rgb(0, 0, 255)"
-        });
-        expect($('.busy-load-container')).to.have.css('background-color', 'rgb(0, 0, 255)');
-        $('#maskme').busyLoad('hide');
     });
 });
 describe('busy-load components', function() {
@@ -70,9 +63,6 @@ describe('busy-load components', function() {
     });
     it('text exists', function() {
         expect($('#maskme>.busy-load-container>.busy-load-container-item>.busy-load-text')).to.exist;
-    });
-    it('text matches Loading', function() {
-        expect($('#maskme>.busy-load-container>.busy-load-container-item>.busy-load-text').text()).to.contain('Loading');
     });
 });
 describe('busy-load settings', function() {
@@ -104,5 +94,55 @@ describe('busy-load settings', function() {
             })
         });
         expect($('#maskme>.busy-load-container #iamcustom')).to.exist;
+    });
+    it('set color', function() {
+        $('#maskme').busyLoad('show', {
+            color: "rgb(0, 0, 255)"
+        }); 
+        expect($('#maskme  .busy-load-spinner')).to.have.css('color', 'rgb(0, 0, 255)');
+    });
+    it('set color', function() {
+        $('#maskme').busyLoad('show', {
+            color: "rgb(0, 0, 255)"
+        }); 
+        expect($('#maskme  .busy-load-spinner')).to.have.css('color', 'rgb(0, 0, 255)');
+    });
+    it('set background', function() {
+        $('#maskme').busyLoad('show', {
+            "background": "rgb(0, 0, 255)"
+        });
+        expect($('#maskme .busy-load-container')).to.have.css('background-color', 'rgb(0, 0, 255)'); 
+    });
+    it('set min/maxSize', function() {
+        $('#maskme').busyLoad('show', {
+            "minSize": "21px",
+            "maxSize": "21px",
+        });
+        expect($('#maskme .busy-load-spinner')).to.have.css('min-width', '21px'); 
+        expect($('#maskme .busy-load-spinner')).to.have.css('min-height', '21px'); 
+        expect($('#maskme .busy-load-spinner')).to.have.css('max-width', '21px'); 
+        expect($('#maskme .busy-load-spinner')).to.have.css('max-height', '21px'); 
+    });
+    it('text matches', function() {
+        expect($('#maskme>.busy-load-container>.busy-load-container-item>.busy-load-text').text()).to.contain('Loading');
+    });
+    it('text matches also text with blanks', function() {
+        $('#maskme').busyLoad('show', {
+            "text": "Whatever you want" 
+        });
+        expect($('#maskme .busy-load-text').text()).to.contain('Whatever you want');
+    });
+    it('set textColor', function() {
+        $('#maskme').busyLoad('show', {
+            "text": "Loading",
+            "textColor": "rgb(0, 21, 255)",
+        }); 
+        expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 21, 255)'); 
+    });
+    it('textColor default is color', function() {
+        $('#maskme').busyLoad('show', {
+            "text": "Loading"
+        }); 
+        expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 128, 0)'); // green
     });
 });
