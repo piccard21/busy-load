@@ -128,7 +128,19 @@ $.busyLoadSetup({
 }); 
 ```         
 
+## Defaults
 
+To see the actual default-settings use **$fn.busyLoad.defaults**:
+ 
+```        
+$fn.busyLoad.defaults
+```     
+
+Setting a new default value:
+
+```        
+$fn.busyLoad.defaults.scolor = "blue"
+```     
 
 ## License
 
