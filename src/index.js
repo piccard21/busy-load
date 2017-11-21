@@ -15,7 +15,6 @@ jQuery = require('jquery');
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
     $.fn.busyLoad.defaults = defaults;
-  
-// travis 
+   
 // phantom-repbuit
 }(jQuery));
