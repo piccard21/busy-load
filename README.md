@@ -1,5 +1,6 @@
 [![](https://data.jsdelivr.com/v1/package/npm/busy-load/badge)](https://www.jsdelivr.com/package/npm/busy-load)
-https://travis-ci.org/piccard21/busy-load.svg?branch=develop
+
+[![Build Status](https://travis-ci.org/piccard21/busy-loadsvg?branch=master)](https://travis-ci.org/piccard21/busy-load.svg?branch=master)
 # busy-load
 
 A simple, but flexible loading-mask plugin for jQuery.
