@@ -1,16 +1,16 @@
 import { Component } from './class.Component.js';
+import {get} from "lodash";
 
 export class Container extends Component {
     constructor(busyLoadOptions) { 
-        
         super('div', {
-            "class": _.get(busyLoadOptions, "containerClass"),
+            "class": get(busyLoadOptions, "containerClass"),
             "css": {
-                "position": _.get(busyLoadOptions, "fullScreen",  false)  ? "fixed" : "absolute",
+                "position": get(busyLoadOptions, "fullScreen",  false)  ? "fixed" : "absolute",
                 "top": 0,
                 "left": 0,
-                "background": _.get(busyLoadOptions, "background",  "#fff"),
-                "color": _.get(busyLoadOptions, "color", "#0000001a"),
+                "background": get(busyLoadOptions, "background",  "#fff"),
+                "color": get(busyLoadOptions, "color", "#0000001a"),
                 "display": "flex",
                 "align-items": "center",
                 "justify-content": "center",

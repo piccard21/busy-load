@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export class Component {
     constructor(tag, options, busyLoadOptions) { 
         this._options = options;

@@ -106,12 +106,6 @@ describe('busy-load settings', function() {
         }); 
         expect($('#maskme  .busy-load-spinner')).to.have.css('color', 'rgb(0, 0, 255)');
     });
-    it('set color', function() {
-        $('#maskme').busyLoad('show', {
-            color: "rgb(0, 0, 255)"
-        }); 
-        expect($('#maskme  .busy-load-spinner')).to.have.css('color', 'rgb(0, 0, 255)');
-    });
     it('set background', function() {
         $('#maskme').busyLoad('show', {
             "background": "rgb(0, 0, 255)"

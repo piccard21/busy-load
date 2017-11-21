@@ -3,22 +3,24 @@ import {
     busyLoad,
     busyLoadSetup,
     busyLoadFull
-} from './lib/busy-load'
+} from './lib/busy-load.js'
+import {get} from "lodash";
 import defaults from './lib/defaults.js';
+ 
+jQuery = require('jquery');
 
-window._ = require('lodash');
-$ = jQuery = require('jquery');
 
 (function($) {
     $.fn.busyLoad = busyLoad;
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
     $.fn.busyLoad.defaults = defaults;
- 
-// _.get alleine 
+  
 // travis
+// exceptions
+// events
 
-    //     $.busyLoadSetup({
+    // $.busyLoadSetup({
     //     animation: "slide",
     //     background: "rgba(255, 152, 0, 0.86)"
     // });

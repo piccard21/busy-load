@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import {get} from "lodash";
 import {
     Component
 } from './class.Component.js';
@@ -6,18 +6,17 @@ import {
 export class Text extends Component {
     constructor(busyLoadOptions) { 
         super('span', {
-            "class": _.get(busyLoadOptions, "textClass"),
+            "class": get(busyLoadOptions, "textClass"),
             "css": {
-                "color":  _.get(busyLoadOptions, 'textColor', _.get(busyLoadOptions, 'color', "#fff")),
-                "font-size": _.get(busyLoadOptions, 'fontSize', "1rem"),
+                "color":  get(busyLoadOptions, 'textColor', get(busyLoadOptions, 'color', "#fff")),
+                "font-size": get(busyLoadOptions, 'fontSize', "1rem"),
             },
-            "text": _.get(busyLoadOptions, "text", "Loading ...")
+            "text": get(busyLoadOptions, "text", "Loading ...")
         }, busyLoadOptions);
-
-
+        
 
         // set margin
-        let flexDirection = _.get(busyLoadOptions, "textPosition",  "right");
+        let flexDirection = get(busyLoadOptions, "textPosition",  "right");
         let marginDirection = "margin-left";
 
         switch (flexDirection) {
@@ -32,7 +31,6 @@ export class Text extends Component {
                 break;
         }
 
-        this.tag.css(marginDirection, _.get(busyLoadOptions, 'textMargin', ".5rem"));
-
+        this.tag.css(marginDirection, get(busyLoadOptions, 'textMargin', ".5rem"));
     } 
 }

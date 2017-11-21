@@ -1,9 +1,10 @@
 import {Component} from './class.Component.js';
+import {get} from "lodash";
 
 export class ContainerItem extends Component {
     constructor(busyLoadOptions) { 
 
-        let flexDirection = _.get(busyLoadOptions, "textPosition",  "right");
+        let flexDirection = get(busyLoadOptions, "textPosition",  "right");
 
         switch (flexDirection) {
             case "top":
@@ -23,7 +24,7 @@ export class ContainerItem extends Component {
         }
 
         super('div', {
-            "class":  _.get(busyLoadOptions, "containerItemClass"), 
+            "class":  get(busyLoadOptions, "containerItemClass"), 
             "css": {
                 "background": "none",
                 "display": "flex",

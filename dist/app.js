@@ -340,7 +340,7 @@ module.exports = function (NAME, exec) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(46);
+var IObject = __webpack_require__(47);
 var defined = __webpack_require__(23);
 module.exports = function (it) {
   return IObject(defined(it));
@@ -351,7 +351,7 @@ module.exports = function (it) {
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE = __webpack_require__(47);
+var pIE = __webpack_require__(48);
 var createDesc = __webpack_require__(31);
 var toIObject = __webpack_require__(15);
 var toPrimitive = __webpack_require__(22);
@@ -518,7 +518,7 @@ module.exports = function (KEY, exec) {
 // 5 -> Array#find
 // 6 -> Array#findIndex
 var ctx = __webpack_require__(18);
-var IObject = __webpack_require__(46);
+var IObject = __webpack_require__(47);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
 var asc = __webpack_require__(85);
@@ -580,7 +580,7 @@ if (__webpack_require__(6)) {
   var toAbsoluteIndex = __webpack_require__(35);
   var toPrimitive = __webpack_require__(22);
   var has = __webpack_require__(11);
-  var classof = __webpack_require__(48);
+  var classof = __webpack_require__(49);
   var isObject = __webpack_require__(4);
   var toObject = __webpack_require__(9);
   var isArrayIter = __webpack_require__(82);
@@ -594,7 +594,7 @@ if (__webpack_require__(6)) {
   var createArrayIncludes = __webpack_require__(51);
   var speciesConstructor = __webpack_require__(58);
   var ArrayIterators = __webpack_require__(87);
-  var Iterators = __webpack_require__(44);
+  var Iterators = __webpack_require__(45);
   var $iterDetect = __webpack_require__(55);
   var setSpecies = __webpack_require__(38);
   var arrayFill = __webpack_require__(86);
@@ -1365,121 +1365,6 @@ module.exports = function (target, src, safe) {
 
 /***/ }),
 /* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var def = __webpack_require__(7).f;
-var has = __webpack_require__(11);
-var TAG = __webpack_require__(5)('toStringTag');
-
-module.exports = function (it, tag, stat) {
-  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
-};
-
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(0);
-var defined = __webpack_require__(23);
-var fails = __webpack_require__(3);
-var spaces = __webpack_require__(72);
-var space = '[' + spaces + ']';
-var non = '\u200b\u0085';
-var ltrim = RegExp('^' + space + space + '*');
-var rtrim = RegExp(space + space + '*$');
-
-var exporter = function (KEY, exec, ALIAS) {
-  var exp = {};
-  var FORCE = fails(function () {
-    return !!spaces[KEY]() || non[KEY]() != non;
-  });
-  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
-  if (ALIAS) exp[ALIAS] = fn;
-  $export($export.P + $export.F * FORCE, 'String', exp);
-};
-
-// 1 -> String#trimLeft
-// 2 -> String#trimRight
-// 3 -> String#trim
-var trim = exporter.trim = function (string, TYPE) {
-  string = String(defined(string));
-  if (TYPE & 1) string = string.replace(ltrim, '');
-  if (TYPE & 2) string = string.replace(rtrim, '');
-  return string;
-};
-
-module.exports = exporter;
-
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-module.exports = {};
-
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(4);
-module.exports = function (it, TYPE) {
-  if (!isObject(it) || it._t !== TYPE) throw TypeError('Incompatible receiver, ' + TYPE + ' required!');
-  return it;
-};
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(19);
-// eslint-disable-next-line no-prototype-builtins
-module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
-  return cof(it) == 'String' ? it.split('') : Object(it);
-};
-
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports) {
-
-exports.f = {}.propertyIsEnumerable;
-
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(19);
-var TAG = __webpack_require__(5)('toStringTag');
-// ES3 wrong here
-var ARG = cof(function () { return arguments; }()) == 'Arguments';
-
-// fallback for IE11 Script Access Denied error
-var tryGet = function (it, key) {
-  try {
-    return it[key];
-  } catch (e) { /* empty */ }
-};
-
-module.exports = function (it) {
-  var O, T, B;
-  return it === undefined ? 'Undefined' : it === null ? 'Null'
-    // @@toStringTag case
-    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
-    // builtinTag case
-    : ARG ? cof(O)
-    // ES3 arguments fallback
-    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-};
-
-
-/***/ }),
-/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18571,6 +18456,121 @@ module.exports = function (it) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(65), __webpack_require__(335)(module)))
 
 /***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var def = __webpack_require__(7).f;
+var has = __webpack_require__(11);
+var TAG = __webpack_require__(5)('toStringTag');
+
+module.exports = function (it, tag, stat) {
+  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
+};
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(0);
+var defined = __webpack_require__(23);
+var fails = __webpack_require__(3);
+var spaces = __webpack_require__(72);
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+module.exports = {};
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(4);
+module.exports = function (it, TYPE) {
+  if (!isObject(it) || it._t !== TYPE) throw TypeError('Incompatible receiver, ' + TYPE + ' required!');
+  return it;
+};
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+var cof = __webpack_require__(19);
+// eslint-disable-next-line no-prototype-builtins
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
+  return cof(it) == 'String' ? it.split('') : Object(it);
+};
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = __webpack_require__(19);
+var TAG = __webpack_require__(5)('toStringTag');
+// ES3 wrong here
+var ARG = cof(function () { return arguments; }()) == 'Arguments';
+
+// fallback for IE11 Script Access Denied error
+var tryGet = function (it, key) {
+  try {
+    return it[key];
+  } catch (e) { /* empty */ }
+};
+
+module.exports = function (it) {
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+    // @@toStringTag case
+    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+    // builtinTag case
+    : ARG ? cof(O)
+    // ES3 arguments fallback
+    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+};
+
+
+/***/ }),
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18757,7 +18757,7 @@ var anInstance = __webpack_require__(39);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
 var $iterDetect = __webpack_require__(55);
-var setToStringTag = __webpack_require__(42);
+var setToStringTag = __webpack_require__(43);
 var inheritIfRequired = __webpack_require__(73);
 
 module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
@@ -18947,15 +18947,8 @@ module.exports = function (COLLECTION) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Component = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _lodash = __webpack_require__(49);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -18975,12 +18968,12 @@ var Component = exports.Component = function () {
      */
 
     _createClass(Component, [{
-        key: 'debugOptions',
+        key: "debugOptions",
         value: function debugOptions() {
             console.log(this._options);
         }
     }, {
-        key: 'extendOptions',
+        key: "extendOptions",
         value: function extendOptions(options) {
             $.extend(this._options, options);
         }
@@ -18990,7 +18983,7 @@ var Component = exports.Component = function () {
          */
 
     }, {
-        key: 'setTag',
+        key: "setTag",
         value: function setTag(tag) {
             if (tag instanceof jQuery) {
                 this._$tag = tag;
@@ -19001,7 +18994,7 @@ var Component = exports.Component = function () {
             }
         }
     }, {
-        key: 'options',
+        key: "options",
         get: function get() {
             return this._options;
         },
@@ -19009,7 +19002,7 @@ var Component = exports.Component = function () {
             this._options = newOptions;
         }
     }, {
-        key: 'tag',
+        key: "tag",
         get: function get() {
             return this._$tag;
         },
@@ -19239,9 +19232,9 @@ var $export = __webpack_require__(0);
 var redefine = __webpack_require__(13);
 var hide = __webpack_require__(12);
 var has = __webpack_require__(11);
-var Iterators = __webpack_require__(44);
+var Iterators = __webpack_require__(45);
 var $iterCreate = __webpack_require__(79);
-var setToStringTag = __webpack_require__(42);
+var setToStringTag = __webpack_require__(43);
 var getPrototypeOf = __webpack_require__(17);
 var ITERATOR = __webpack_require__(5)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
@@ -19313,7 +19306,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 var create = __webpack_require__(36);
 var descriptor = __webpack_require__(31);
-var setToStringTag = __webpack_require__(42);
+var setToStringTag = __webpack_require__(43);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -19362,7 +19355,7 @@ module.exports = function (KEY) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
-var Iterators = __webpack_require__(44);
+var Iterators = __webpack_require__(45);
 var ITERATOR = __webpack_require__(5)('iterator');
 var ArrayProto = Array.prototype;
 
@@ -19390,9 +19383,9 @@ module.exports = function (object, index, value) {
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(48);
+var classof = __webpack_require__(49);
 var ITERATOR = __webpack_require__(5)('iterator');
-var Iterators = __webpack_require__(44);
+var Iterators = __webpack_require__(45);
 module.exports = __webpack_require__(21).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
@@ -19442,7 +19435,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 
 var addToUnscopables = __webpack_require__(30);
 var step = __webpack_require__(109);
-var Iterators = __webpack_require__(44);
+var Iterators = __webpack_require__(45);
 var toIObject = __webpack_require__(15);
 
 // 22.1.3.4 Array.prototype.entries()
@@ -19684,7 +19677,7 @@ var toIndex = __webpack_require__(118);
 var gOPN = __webpack_require__(37).f;
 var dP = __webpack_require__(7).f;
 var arrayFill = __webpack_require__(86);
-var setToStringTag = __webpack_require__(42);
+var setToStringTag = __webpack_require__(43);
 var ARRAY_BUFFER = 'ArrayBuffer';
 var DATA_VIEW = 'DataView';
 var PROTOTYPE = 'prototype';
@@ -20039,9 +20032,9 @@ module.exports.f = function getOwnPropertyNames(it) {
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys = __webpack_require__(34);
 var gOPS = __webpack_require__(52);
-var pIE = __webpack_require__(47);
+var pIE = __webpack_require__(48);
 var toObject = __webpack_require__(9);
-var IObject = __webpack_require__(46);
+var IObject = __webpack_require__(47);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -20130,7 +20123,7 @@ module.exports = function (fn, args, that) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(2).parseInt;
-var $trim = __webpack_require__(43).trim;
+var $trim = __webpack_require__(44).trim;
 var ws = __webpack_require__(72);
 var hex = /^[-+]?0[xX]/;
 
@@ -20145,7 +20138,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(2).parseFloat;
-var $trim = __webpack_require__(43).trim;
+var $trim = __webpack_require__(44).trim;
 
 module.exports = 1 / $parseFloat(__webpack_require__(72) + '-0') !== -Infinity ? function parseFloat(str) {
   var string = $trim(String(str), 3);
@@ -20240,7 +20233,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 var aFunction = __webpack_require__(10);
 var toObject = __webpack_require__(9);
-var IObject = __webpack_require__(46);
+var IObject = __webpack_require__(47);
 var toLength = __webpack_require__(8);
 
 module.exports = function (that, callbackfn, aLen, memo, isRight) {
@@ -20359,7 +20352,7 @@ module.exports = function (C, x) {
 "use strict";
 
 var strong = __webpack_require__(114);
-var validate = __webpack_require__(45);
+var validate = __webpack_require__(46);
 var MAP = 'Map';
 
 // 23.1 Map Objects
@@ -20395,7 +20388,7 @@ var step = __webpack_require__(109);
 var setSpecies = __webpack_require__(38);
 var DESCRIPTORS = __webpack_require__(6);
 var fastKey = __webpack_require__(29).fastKey;
-var validate = __webpack_require__(45);
+var validate = __webpack_require__(46);
 var SIZE = DESCRIPTORS ? '_s' : 'size';
 
 var getEntry = function (that, key) {
@@ -20536,7 +20529,7 @@ module.exports = {
 "use strict";
 
 var strong = __webpack_require__(114);
-var validate = __webpack_require__(45);
+var validate = __webpack_require__(46);
 var SET = 'Set';
 
 // 23.2 Set Objects
@@ -20563,7 +20556,7 @@ var assign = __webpack_require__(97);
 var weak = __webpack_require__(117);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
-var validate = __webpack_require__(45);
+var validate = __webpack_require__(46);
 var WEAK_MAP = 'WeakMap';
 var getWeak = meta.getWeak;
 var isExtensible = Object.isExtensible;
@@ -20630,7 +20623,7 @@ var anInstance = __webpack_require__(39);
 var forOf = __webpack_require__(40);
 var createArrayMethod = __webpack_require__(26);
 var $has = __webpack_require__(11);
-var validate = __webpack_require__(45);
+var validate = __webpack_require__(46);
 var arrayFind = createArrayMethod(5);
 var arrayFindIndex = createArrayMethod(6);
 var id = 0;
@@ -20814,7 +20807,7 @@ module.exports = function (that, maxLength, fillString, left) {
 
 var getKeys = __webpack_require__(34);
 var toIObject = __webpack_require__(15);
-var isEnum = __webpack_require__(47).f;
+var isEnum = __webpack_require__(48).f;
 module.exports = function (isEntries) {
   return function (it) {
     var O = toIObject(it);
@@ -20835,7 +20828,7 @@ module.exports = function (isEntries) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var classof = __webpack_require__(48);
+var classof = __webpack_require__(49);
 var from = __webpack_require__(124);
 module.exports = function (NAME) {
   return function toJSON() {
@@ -21176,7 +21169,7 @@ var redefine = __webpack_require__(13);
 var META = __webpack_require__(29).KEY;
 var $fails = __webpack_require__(3);
 var shared = __webpack_require__(50);
-var setToStringTag = __webpack_require__(42);
+var setToStringTag = __webpack_require__(43);
 var uid = __webpack_require__(32);
 var wks = __webpack_require__(5);
 var wksExt = __webpack_require__(93);
@@ -21315,7 +21308,7 @@ if (!USE_NATIVE) {
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
   __webpack_require__(37).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(47).f = $propertyIsEnumerable;
+  __webpack_require__(48).f = $propertyIsEnumerable;
   __webpack_require__(52).f = $getOwnPropertySymbols;
 
   if (DESCRIPTORS && !__webpack_require__(33)) {
@@ -21409,7 +21402,7 @@ setToStringTag(global.JSON, 'JSON', true);
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(34);
 var gOPS = __webpack_require__(52);
-var pIE = __webpack_require__(47);
+var pIE = __webpack_require__(48);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -21638,7 +21631,7 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(71).set });
 "use strict";
 
 // 19.1.3.6 Object.prototype.toString()
-var classof = __webpack_require__(48);
+var classof = __webpack_require__(49);
 var test = {};
 test[__webpack_require__(5)('toStringTag')] = 'z';
 if (test + '' != '[object z]') {
@@ -21735,7 +21728,7 @@ var fails = __webpack_require__(3);
 var gOPN = __webpack_require__(37).f;
 var gOPD = __webpack_require__(16).f;
 var dP = __webpack_require__(7).f;
-var $trim = __webpack_require__(43).trim;
+var $trim = __webpack_require__(44).trim;
 var NUMBER = 'Number';
 var $Number = global[NUMBER];
 var Base = $Number;
@@ -22384,7 +22377,7 @@ $export($export.S, 'String', {
 "use strict";
 
 // 21.1.3.25 String.prototype.trim()
-__webpack_require__(43)('trim', function ($trim) {
+__webpack_require__(44)('trim', function ($trim) {
   return function trim() {
     return $trim(this, 3);
   };
@@ -22912,7 +22905,7 @@ var toIObject = __webpack_require__(15);
 var arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export($export.P + $export.F * (__webpack_require__(46) != Object || !__webpack_require__(20)(arrayJoin)), 'Array', {
+$export($export.P + $export.F * (__webpack_require__(47) != Object || !__webpack_require__(20)(arrayJoin)), 'Array', {
   join: function join(separator) {
     return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
   }
@@ -23467,7 +23460,7 @@ __webpack_require__(57)('split', 2, function (defined, SPLIT, $split) {
 var LIBRARY = __webpack_require__(33);
 var global = __webpack_require__(2);
 var ctx = __webpack_require__(18);
-var classof = __webpack_require__(48);
+var classof = __webpack_require__(49);
 var $export = __webpack_require__(0);
 var isObject = __webpack_require__(4);
 var aFunction = __webpack_require__(10);
@@ -23679,7 +23672,7 @@ if (!USE_NATIVE) {
 }
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
-__webpack_require__(42)($Promise, PROMISE);
+__webpack_require__(43)($Promise, PROMISE);
 __webpack_require__(38)(PROMISE);
 Wrapper = __webpack_require__(21)[PROMISE];
 
@@ -23752,7 +23745,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(55)(function
 "use strict";
 
 var weak = __webpack_require__(117);
-var validate = __webpack_require__(45);
+var validate = __webpack_require__(46);
 var WEAK_SET = 'WeakSet';
 
 // 23.4 WeakSet Objects
@@ -24396,7 +24389,7 @@ $export($export.P, 'String', {
 "use strict";
 
 // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-__webpack_require__(43)('trimLeft', function ($trim) {
+__webpack_require__(44)('trimLeft', function ($trim) {
   return function trimLeft() {
     return $trim(this, 1);
   };
@@ -24410,7 +24403,7 @@ __webpack_require__(43)('trimLeft', function ($trim) {
 "use strict";
 
 // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-__webpack_require__(43)('trimRight', function ($trim) {
+__webpack_require__(44)('trimRight', function ($trim) {
   return function trimRight() {
     return $trim(this, 2);
   };
@@ -25401,7 +25394,7 @@ var getKeys = __webpack_require__(34);
 var redefine = __webpack_require__(13);
 var global = __webpack_require__(2);
 var hide = __webpack_require__(12);
-var Iterators = __webpack_require__(44);
+var Iterators = __webpack_require__(45);
 var wks = __webpack_require__(5);
 var ITERATOR = wks('iterator');
 var TO_STRING_TAG = wks('toStringTag');
@@ -26243,14 +26236,16 @@ __webpack_require__(331);
 
 var _busyLoad = __webpack_require__(332);
 
+var _lodash = __webpack_require__(42);
+
 var _defaults = __webpack_require__(126);
 
 var _defaults2 = _interopRequireDefault(_defaults);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window._ = __webpack_require__(49);
-$ = jQuery = __webpack_require__(340);
+// window._ = require('lodash');
+jQuery = __webpack_require__(340);
 
 (function ($) {
     $.fn.busyLoad = _busyLoad.busyLoad;
@@ -26258,12 +26253,12 @@ $ = jQuery = __webpack_require__(340);
     $.busyLoadFull = _busyLoad.busyLoadFull;
     $.fn.busyLoad.defaults = _defaults2.default;
 
-    // alle settings testen
-    // _.get alleine
-    // active
+    // _.get alleine 
     // travis
+    // exceptions
+    // events
 
-    //     $.busyLoadSetup({
+    // $.busyLoadSetup({
     //     animation: "slide",
     //     background: "rgba(255, 152, 0, 0.86)"
     // });
@@ -26390,6 +26385,8 @@ var _classText = __webpack_require__(337);
 
 var _classSpinner = __webpack_require__(338);
 
+var _lodash = __webpack_require__(42);
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var BusyLoad = exports.BusyLoad = function () {
@@ -26425,17 +26422,17 @@ var BusyLoad = exports.BusyLoad = function () {
             this.caller.append($tag); // already hidden
             $tag.trigger("bl.show", [$tag, $(this.caller)]);
 
-            if (_.get(this.settings, "animation", false)) {
+            if ((0, _lodash.get)(this.settings, "animation", false)) {
 
-                switch (_.get(this.settings, "animation").toLowerCase()) {
+                switch ((0, _lodash.get)(this.settings, "animation").toLowerCase()) {
                     case "fade":
-                        $tag = $tag.fadeIn(_.get(this.settings, "animationDuration", "fast"), callback);
+                        $tag = $tag.fadeIn((0, _lodash.get)(this.settings, "animationDuration", "fast"), callback);
                         break;
                     case "slide":
-                        $tag = $tag.slideDown(_.get(this.settings, "animationDuration", "fast"), callback);
+                        $tag = $tag.slideDown((0, _lodash.get)(this.settings, "animationDuration", "fast"), callback);
                         break;
                     default:
-                        throw "don't know animation: " + _.get(this.settings, "animation");
+                        throw "don't know animation: " + (0, _lodash.get)(this.settings, "animation");
                 }
             } else {
                 $tag.show(0, callback);
@@ -26455,16 +26452,16 @@ var BusyLoad = exports.BusyLoad = function () {
 
             $tag.trigger("bl.hide", [$tag, $(this.caller)]);
 
-            if (_.get(this.settings, "animation", false)) {
-                switch (_.get(this.settings, "animation").toLowerCase()) {
+            if ((0, _lodash.get)(this.settings, "animation", false)) {
+                switch ((0, _lodash.get)(this.settings, "animation").toLowerCase()) {
                     case "fade":
-                        $tag = $tag.fadeOut(_.get(this.settings, "animationDuration", "fast"), callback);
+                        $tag = $tag.fadeOut((0, _lodash.get)(this.settings, "animationDuration", "fast"), callback);
                         break;
                     case "slide":
-                        $tag = $tag.slideUp(_.get(this.settings, "animationDuration", "fast"), callback);
+                        $tag = $tag.slideUp((0, _lodash.get)(this.settings, "animationDuration", "fast"), callback);
                         break;
                     default:
-                        throw "don't know animation: " + _.get(this.settings, "animation");
+                        throw "don't know animation: " + (0, _lodash.get)(this.settings, "animation");
                 }
             } else {
                 $tag.hide(0, callback);
@@ -26484,12 +26481,12 @@ var BusyLoad = exports.BusyLoad = function () {
                     this._containerItem = new _classContainerItem.ContainerItem(this._settings);
 
                     // append text 
-                    if (_.get(this.settings, "text", false)) {
+                    if ((0, _lodash.get)(this.settings, "text", false)) {
                         this._loadingText = new _classText.Text(this._settings);
                         this._containerItem.tag.append(this._loadingText.tag);
                     }
                     // append spinner 
-                    if (_.get(this.settings, "spinner", "pump") !== false) {
+                    if ((0, _lodash.get)(this.settings, "spinner", "pump") !== false) {
                         this._spinner = new _classSpinner.Spinner(this._settings);
                         this._containerItem.tag.append(this._spinner.tag);
                     }
@@ -26571,6 +26568,8 @@ exports.Container = undefined;
 
 var _classComponent = __webpack_require__(64);
 
+var _lodash = __webpack_require__(42);
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -26584,13 +26583,13 @@ var Container = exports.Container = function (_Component) {
         _classCallCheck(this, Container);
 
         return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).call(this, 'div', {
-            "class": _.get(busyLoadOptions, "containerClass"),
+            "class": (0, _lodash.get)(busyLoadOptions, "containerClass"),
             "css": {
-                "position": _.get(busyLoadOptions, "fullScreen", false) ? "fixed" : "absolute",
+                "position": (0, _lodash.get)(busyLoadOptions, "fullScreen", false) ? "fixed" : "absolute",
                 "top": 0,
                 "left": 0,
-                "background": _.get(busyLoadOptions, "background", "#fff"),
-                "color": _.get(busyLoadOptions, "color", "#0000001a"),
+                "background": (0, _lodash.get)(busyLoadOptions, "background", "#fff"),
+                "color": (0, _lodash.get)(busyLoadOptions, "color", "#0000001a"),
                 "display": "flex",
                 "align-items": "center",
                 "justify-content": "center",
@@ -26645,6 +26644,8 @@ exports.ContainerItem = undefined;
 
 var _classComponent = __webpack_require__(64);
 
+var _lodash = __webpack_require__(42);
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -26657,7 +26658,7 @@ var ContainerItem = exports.ContainerItem = function (_Component) {
     function ContainerItem(busyLoadOptions) {
         _classCallCheck(this, ContainerItem);
 
-        var flexDirection = _.get(busyLoadOptions, "textPosition", "right");
+        var flexDirection = (0, _lodash.get)(busyLoadOptions, "textPosition", "right");
 
         switch (flexDirection) {
             case "top":
@@ -26677,7 +26678,7 @@ var ContainerItem = exports.ContainerItem = function (_Component) {
         }
 
         return _possibleConstructorReturn(this, (ContainerItem.__proto__ || Object.getPrototypeOf(ContainerItem)).call(this, 'div', {
-            "class": _.get(busyLoadOptions, "containerItemClass"),
+            "class": (0, _lodash.get)(busyLoadOptions, "containerItemClass"),
             "css": {
                 "background": "none",
                 "display": "flex",
@@ -26703,13 +26704,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Text = undefined;
 
-var _lodash = __webpack_require__(49);
-
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash = __webpack_require__(42);
 
 var _classComponent = __webpack_require__(64);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26725,15 +26722,15 @@ var Text = exports.Text = function (_Component) {
 
         // set margin
         var _this = _possibleConstructorReturn(this, (Text.__proto__ || Object.getPrototypeOf(Text)).call(this, 'span', {
-            "class": _lodash2.default.get(busyLoadOptions, "textClass"),
+            "class": (0, _lodash.get)(busyLoadOptions, "textClass"),
             "css": {
-                "color": _lodash2.default.get(busyLoadOptions, 'textColor', _lodash2.default.get(busyLoadOptions, 'color', "#fff")),
-                "font-size": _lodash2.default.get(busyLoadOptions, 'fontSize', "1rem")
+                "color": (0, _lodash.get)(busyLoadOptions, 'textColor', (0, _lodash.get)(busyLoadOptions, 'color', "#fff")),
+                "font-size": (0, _lodash.get)(busyLoadOptions, 'fontSize', "1rem")
             },
-            "text": _lodash2.default.get(busyLoadOptions, "text", "Loading ...")
+            "text": (0, _lodash.get)(busyLoadOptions, "text", "Loading ...")
         }, busyLoadOptions));
 
-        var flexDirection = _lodash2.default.get(busyLoadOptions, "textPosition", "right");
+        var flexDirection = (0, _lodash.get)(busyLoadOptions, "textPosition", "right");
         var marginDirection = "margin-left";
 
         switch (flexDirection) {
@@ -26748,8 +26745,7 @@ var Text = exports.Text = function (_Component) {
                 break;
         }
 
-        _this.tag.css(marginDirection, _lodash2.default.get(busyLoadOptions, 'textMargin', ".5rem"));
-
+        _this.tag.css(marginDirection, (0, _lodash.get)(busyLoadOptions, 'textMargin', ".5rem"));
         return _this;
     }
 
@@ -26770,15 +26766,11 @@ exports.Spinner = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _lodash = __webpack_require__(49);
-
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash = __webpack_require__(42);
 
 var _classComponent = __webpack_require__(64);
 
 var _classSpinnerLib = __webpack_require__(339);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26794,19 +26786,19 @@ var Spinner = exports.Spinner = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Spinner.__proto__ || Object.getPrototypeOf(Spinner)).call(this, "span", {}, busyLoadOptions));
 
-        if (_lodash2.default.get(_this._busyLoadOptions, 'fontawesome')) {
+        if ((0, _lodash.get)(_this._busyLoadOptions, 'fontawesome')) {
             _this.createFontAwesomeTag();
-        } else if (_lodash2.default.get(_this._busyLoadOptions, 'custom')) {
+        } else if ((0, _lodash.get)(_this._busyLoadOptions, 'custom')) {
             _this.createCustomTag();
-        } else if (_lodash2.default.get(_this._busyLoadOptions, 'image')) {
+        } else if ((0, _lodash.get)(_this._busyLoadOptions, 'image')) {
             _this.createImageTag();
-        } else if (_lodash2.default.get(_this._busyLoadOptions, 'spinner')) {
-            _this.createCssTag(_lodash2.default.get(_this._busyLoadOptions, 'spinner'));
+        } else if ((0, _lodash.get)(_this._busyLoadOptions, 'spinner')) {
+            _this.createCssTag((0, _lodash.get)(_this._busyLoadOptions, 'spinner'));
         } else {
             _this.createCssTag("pump");
         }
 
-        _this.tag.addClass(_lodash2.default.get(_this._busyLoadOptions, "spinnerClass"));
+        _this.tag.addClass((0, _lodash.get)(_this._busyLoadOptions, "spinnerClass"));
         return _this;
     }
 
@@ -26840,9 +26832,9 @@ var Spinner = exports.Spinner = function (_Component) {
         key: 'createFontAwesomeTag',
         value: function createFontAwesomeTag() {
             this.options = {
-                "class": _lodash2.default.get(this._busyLoadOptions, 'fontawesome', "fa fa-refresh fa-spin fa-2x fa-fw"),
+                "class": (0, _lodash.get)(this._busyLoadOptions, 'fontawesome', "fa fa-refresh fa-spin fa-2x fa-fw"),
                 "css": {
-                    "color": _lodash2.default.get(this._busyLoadOptions, 'color', "#fff")
+                    "color": (0, _lodash.get)(this._busyLoadOptions, 'color', "#fff")
                 }
             };
 
@@ -26857,7 +26849,7 @@ var Spinner = exports.Spinner = function (_Component) {
     }, {
         key: 'createCustomTag',
         value: function createCustomTag() {
-            var custom = _lodash2.default.get(this._busyLoadOptions, 'custom');
+            var custom = (0, _lodash.get)(this._busyLoadOptions, 'custom');
             if (!custom instanceof jQuery) {
                 throw "wrong type for creating a tag";
             }
@@ -26869,10 +26861,10 @@ var Spinner = exports.Spinner = function (_Component) {
         key: 'setMaxMinSize',
         value: function setMaxMinSize() {
             this.tag.css({
-                "max-height": _lodash2.default.get(this._busyLoadOptions, 'maxSize'),
-                "max-width": _lodash2.default.get(this._busyLoadOptions, 'maxSize'),
-                "min-height": _lodash2.default.get(this._busyLoadOptions, 'minSize'),
-                "min-width": _lodash2.default.get(this._busyLoadOptions, 'minSize')
+                "max-height": (0, _lodash.get)(this._busyLoadOptions, 'maxSize'),
+                "max-width": (0, _lodash.get)(this._busyLoadOptions, 'maxSize'),
+                "min-height": (0, _lodash.get)(this._busyLoadOptions, 'minSize'),
+                "min-width": (0, _lodash.get)(this._busyLoadOptions, 'minSize')
             });
         }
 
@@ -26897,11 +26889,7 @@ exports.SpinnerLib = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _lodash = __webpack_require__(49);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _lodash = __webpack_require__(42);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26948,7 +26936,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
         value: function createCubeGrid() {
             this._spinner = $("<div class=\"spinner-cube-grid\"> \n              <div class=\"sk-cube sk-cube1\"></div>\n              <div class=\"sk-cube sk-cube2\"></div>\n              <div class=\"sk-cube sk-cube3\"></div>\n              <div class=\"sk-cube sk-cube4\"></div>\n              <div class=\"sk-cube sk-cube5\"></div>\n              <div class=\"sk-cube sk-cube6\"></div>\n              <div class=\"sk-cube sk-cube7\"></div>\n              <div class=\"sk-cube sk-cube8\"></div>\n              <div class=\"sk-cube sk-cube9\"></div>\n        </div>");
             this._spinner.find(".sk-cube").css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
@@ -26956,7 +26944,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
         value: function createCircleLine() {
             this._spinner = $("<div class=\"spinner-circle-line\">\n              <div class=\"bounce1\"></div>\n              <div class=\"bounce2\"></div>\n              <div class=\"bounce3\"></div>\n        </div>");
             this._spinner.find(".bounce1, .bounce2, .bounce3").css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
@@ -26966,7 +26954,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
             this._spinner.css({
                 "margin-right": "0.4rem"
             }).find(".dot1, .dot2").css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
@@ -26975,7 +26963,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
             this._spinner = $("<div class=\"spinner-pump\">\n            <div class=\"double-bounce1\"></div>\n            <div class=\"double-bounce2\"></div>\n        </div>");
 
             this._spinner.find(".double-bounce1, .double-bounce2").css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333"),
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333"),
                 "margin-right": "0.9rem"
             });
         }
@@ -26984,7 +26972,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
         value: function createPulsar() {
             this._spinner = $("<div class=\"spinner-pulsar\"></div>");
             this._spinner.css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
@@ -26992,7 +26980,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
         value: function createAccordion() {
             this._spinner = $("<div class=\"spinner-accordion\">\n    \t\t  <div class=\"rect1\"></div>\n    \t\t  <div class=\"rect2\"></div>\n    \t\t  <div class=\"rect3\"></div>\n    \t\t  <div class=\"rect4\"></div>\n    \t\t  <div class=\"rect5\"></div>\n    \t\t</div>");
             this._spinner.find("div").css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
@@ -27000,7 +26988,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
         value: function createCube() {
             this._spinner = $("<div class=\"spinner-cube\"></div>");
             this._spinner.css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
@@ -27011,7 +26999,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
             this._spinner.css({
                 "margin-right": "0.9rem"
             }).find(".cube1, .cube2").css({
-                "background-color": _lodash2.default.get(this._busyLoadOptions, "color", "#333")
+                "background-color": (0, _lodash.get)(this._busyLoadOptions, "color", "#333")
             });
         }
     }, {
