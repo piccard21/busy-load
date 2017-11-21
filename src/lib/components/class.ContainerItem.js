@@ -20,7 +20,7 @@ export class ContainerItem extends Component {
                 flexDirection = "row";
                 break;
             default:
-                throw `don't know textPosition '${flexDirection}'`
+                throw `don't know textPosition: ${flexDirection}`
         }
 
         super('div', {

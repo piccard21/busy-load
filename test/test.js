@@ -182,3 +182,53 @@ describe('busy-load settings', function() {
         expect($('#maskme .something-very-very-very-special')).to.exist;
     });
 });
+describe('busy-load settings with wrong parameters', function() {
+  
+    var fnAction = function(){
+        $('#maskme').busyLoad('action-wrong')
+    };
+    
+    it('wrong action', function() {  
+        expect(fnAction).to.throw("don't know action 'action-wrong'"); 
+    });
+
+    var fnAnimations = function(){
+        $('#maskme').busyLoad('show', {
+            animation: "animation-wrong"
+        })
+    };
+
+    it('wrong animation', function() {  
+        expect(fnAnimations).to.throw("don\'t know animation: animation-wrong"); 
+    }); 
+
+    var fnTextPos = function(){
+        $('#maskme').busyLoad('show', {
+            textPosition: "textPosition-wrong"
+        })
+    };
+
+    it('wrong textPosition', function() {  
+        expect(fnTextPos).to.throw("don\'t know textPosition: textPosition-wrong"); 
+    }); 
+
+    var fnCustomTag= function(){
+        $('#maskme').busyLoad('show', {
+            custom: "customEl-wrong"
+        })
+    };
+
+    it('wrong customTag', function() {  
+        expect(fnCustomTag).to.throw("wrong type for creating a tag"); 
+    }); 
+
+    var fnSpinner= function(){
+        $('#maskme').busyLoad('show', {
+            spinner: "spinner-wrong"
+        })
+    };
+
+    it('wrong spinner', function() {  
+        expect(fnSpinner).to.throw("don\'t know spinner: spinner-wrong"); 
+    }); 
+});

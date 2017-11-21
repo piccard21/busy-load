@@ -26244,7 +26244,6 @@ var _defaults2 = _interopRequireDefault(_defaults);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// window._ = require('lodash');
 jQuery = __webpack_require__(340);
 
 (function ($) {
@@ -26253,7 +26252,6 @@ jQuery = __webpack_require__(340);
     $.busyLoadFull = _busyLoad.busyLoadFull;
     $.fn.busyLoad.defaults = _defaults2.default;
 
-    // _.get alleine 
     // travis
     // exceptions
     // events
@@ -26674,7 +26672,7 @@ var ContainerItem = exports.ContainerItem = function (_Component) {
                 flexDirection = "row";
                 break;
             default:
-                throw "don't know textPosition '" + flexDirection + "'";
+                throw "don't know textPosition: " + flexDirection;
         }
 
         return _possibleConstructorReturn(this, (ContainerItem.__proto__ || Object.getPrototypeOf(ContainerItem)).call(this, 'div', {
@@ -26850,7 +26848,10 @@ var Spinner = exports.Spinner = function (_Component) {
         key: 'createCustomTag',
         value: function createCustomTag() {
             var custom = (0, _lodash.get)(this._busyLoadOptions, 'custom');
-            if (!custom instanceof jQuery) {
+            var isJqueryObject = custom instanceof jQuery;
+
+            if (!isJqueryObject) {
+                console.info("WRONG");
                 throw "wrong type for creating a tag";
             }
 
@@ -26927,7 +26928,7 @@ var SpinnerLib = exports.SpinnerLib = function () {
                 this.createCubeGrid();
                 break;
             default:
-                throw "don't know spinner '" + spinner + "'";
+                throw "don't know spinner: " + spinner;
         }
     }
 

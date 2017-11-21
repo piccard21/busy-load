@@ -30,7 +30,7 @@ export class SpinnerLib {
                 this.createCubeGrid();
                 break;
             default:
-                throw `don't know spinner '${spinner}'`
+                throw `don't know spinner: ${spinner}`
         }
     }
     get spinner() {
