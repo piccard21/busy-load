@@ -26251,8 +26251,6 @@ jQuery = __webpack_require__(340);
     $.busyLoadSetup = _busyLoad.busyLoadSetup;
     $.busyLoadFull = _busyLoad.busyLoadFull;
     $.fn.busyLoad.defaults = _defaults2.default;
-
-    // phantom-repbuit
 })(jQuery);
 
 /***/ }),
