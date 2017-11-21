@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import {get} from "lodash";
 
 export class SpinnerLib {
     constructor(spinner, busyLoadOptions={}) {
@@ -30,7 +30,7 @@ export class SpinnerLib {
                 this.createCubeGrid();
                 break;
             default:
-                throw `don't know spinner '${spinner}'`
+                throw `don't know spinner: ${spinner}`
         }
     }
     get spinner() {
@@ -52,7 +52,7 @@ export class SpinnerLib {
               <div class="sk-cube sk-cube9"></div>
         </div>`); 
         this._spinner.find(".sk-cube").css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333") 
+            "background-color": get(this._busyLoadOptions, "color","#333") 
         });
     }
     createCircleLine() {
@@ -62,7 +62,7 @@ export class SpinnerLib {
               <div class="bounce3"></div>
         </div>`); 
         this._spinner.find(".bounce1, .bounce2, .bounce3").css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333") 
+            "background-color": get(this._busyLoadOptions, "color","#333") 
         });
     }
     createCircles() {
@@ -73,7 +73,7 @@ export class SpinnerLib {
         this._spinner.css({
              "margin-right": "0.4rem"
         }).find(".dot1, .dot2").css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333") 
+            "background-color": get(this._busyLoadOptions, "color","#333") 
         });
     }
     createPump() {
@@ -83,14 +83,14 @@ export class SpinnerLib {
         </div>`); 
 
         this._spinner.find(".double-bounce1, .double-bounce2").css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333"),
+            "background-color": get(this._busyLoadOptions, "color","#333"),
             "margin-right": "0.9rem"
         });
     }
     createPulsar() {
         this._spinner = $(`<div class="spinner-pulsar"></div>`);
         this._spinner.css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333") 
+            "background-color": get(this._busyLoadOptions, "color","#333") 
         });
     }
     createAccordion() {
@@ -102,13 +102,13 @@ export class SpinnerLib {
     		  <div class="rect5"></div>
     		</div>`);
         this._spinner.find("div").css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333") 
+            "background-color": get(this._busyLoadOptions, "color","#333") 
         });
     }
     createCube() {
         this._spinner = $(`<div class="spinner-cube"></div>`);
         this._spinner.css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333") 
+            "background-color": get(this._busyLoadOptions, "color","#333") 
         });
     }
     createCubes() {
@@ -120,7 +120,7 @@ export class SpinnerLib {
         this._spinner.css({
              "margin-right": "0.9rem"
         }).find(".cube1, .cube2").css({
-            "background-color": _.get(this._busyLoadOptions, "color","#333")
+            "background-color": get(this._busyLoadOptions, "color","#333")
         });
            
     }

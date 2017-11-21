@@ -2,6 +2,7 @@ import {Container} from './components/class.Container.js';
 import {ContainerItem} from './components/class.ContainerItem.js'; 
 import {Text} from './components/class.Text.js'; 
 import {Spinner} from './components/class.Spinner.js'; 
+import {get} from "lodash";
 
 export class BusyLoad {
     constructor(caller, defaults, options) { 
@@ -44,17 +45,17 @@ export class BusyLoad {
         this.caller.append($tag); // already hidden
         $tag.trigger("bl.show", [$tag, $(this.caller)]);
 
-        if (_.get(this.settings, "animation",  false)) {
+        if (get(this.settings, "animation",  false)) {
 
-            switch (_.get(this.settings, "animation").toLowerCase()) {
+            switch (get(this.settings, "animation").toLowerCase()) {
                 case "fade": 
-                    $tag = $tag.fadeIn(_.get(this.settings, "animationDuration", "fast"), callback);
+                    $tag = $tag.fadeIn(get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 case "slide":
-                    $tag = $tag.slideDown(_.get(this.settings, "animationDuration", "fast"), callback);
+                    $tag = $tag.slideDown(get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 default:
-                     throw "don't know animation: " +  _.get(this.settings, "animation");
+                     throw "don't know animation: " +  get(this.settings, "animation");
             }
         } else {
             $tag.show(0, callback);
@@ -71,16 +72,16 @@ export class BusyLoad {
 
         $tag.trigger("bl.hide", [$tag, $(this.caller)]);
 
-        if (_.get(this.settings, "animation",  false)) {
-            switch (_.get(this.settings, "animation").toLowerCase()) {
+        if (get(this.settings, "animation",  false)) {
+            switch (get(this.settings, "animation").toLowerCase()) {
                 case "fade": 
-                    $tag = $tag.fadeOut(_.get(this.settings, "animationDuration", "fast"), callback);
+                    $tag = $tag.fadeOut(get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 case "slide":
-                    $tag = $tag.slideUp(_.get(this.settings, "animationDuration", "fast"), callback);
+                    $tag = $tag.slideUp(get(this.settings, "animationDuration", "fast"), callback);
                     break;
                 default:
-                     throw "don't know animation: " +  _.get(this.settings, "animation");
+                     throw "don't know animation: " +  get(this.settings, "animation");
             }
         } else {
             $tag.hide(0, callback);
@@ -101,12 +102,12 @@ export class BusyLoad {
 
              
             // append text 
-            if (_.get(this.settings, "text",  false)) { 
+            if (get(this.settings, "text",  false)) { 
                 this._loadingText= new Text(this._settings);
                 this._containerItem.tag.append(this._loadingText.tag); 
             } 
             // append spinner 
-            if (_.get(this.settings, "spinner",  "pump") !== false) {
+            if (get(this.settings, "spinner",  "pump") !== false) {
                 this._spinner= new Spinner(this._settings); 
                 this._containerItem.tag.append(this._spinner.tag);
             } 
@@ -127,6 +128,7 @@ export class BusyLoad {
         if(action == 'show') {
             const randomString = this.createRandomString(); 
 
+            this._caller.addClass('busy-load-active');
             $tag.attr('id', randomString);
             $tag = this.animateShow($tag);
  
@@ -136,6 +138,7 @@ export class BusyLoad {
         else {  
             this.animateHide($tag);
             this._caller.removeData("busy-load-container");
+            this._caller.removeClass('busy-load-active');
         }
     } 
 

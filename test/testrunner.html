@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+            <!-- encoding must be set for mocha's special characters to render properly -->
+            <link href="../node_modules/mocha/mocha.css" rel="stylesheet"/>
+        </meta>
+        <style type="text/css">
+            #maskme {
+                display: block;
+                position: relative;
+             /*   width: 100px;
+                height: 100px;*/
+          }
+        </style>
+    </head>
+    <body>
+        <div id="mocha">
+        </div>
+        <div id="maskme">
+        </div>
+        <script src="../node_modules/mocha/mocha.js">
+        </script>
+        <script src="../node_modules/chai/chai.js">
+        </script>
+        <script src="../node_modules/sinon/pkg/sinon.js">
+        </script>
+        <script>
+            mocha.ui('bdd')
+            expect = chai.expect
+        </script>
+        <script src="../node_modules/jquery/dist/jquery.min.js">
+        </script>
+        <script src="../node_modules/chai-jquery/chai-jquery.js">
+        </script>
+        <script src="../node_modules/sinon-chai/lib/sinon-chai.js ">
+        </script>
+        <script src="../dist/app.js">
+        </script>
+        <link href="../dist/app.css" rel="stylesheet">
+        <script src="test.js">
+        </script>
+            <script>
+                $(function() {
+                      mocha.run();
+                });
+            </script>
+        </link>
+    </body>
+</html>

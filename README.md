@@ -74,8 +74,8 @@ Property              | Description       | value      | Default value
 action                | show or hide the overlay | show, hide | -
 spinner           | a CSS-spinner     | pump, accordion, pulsar, cube, cubes, circle-line, circles, cube-grid | pump
 image        		  | use an image as spinner  | source for image (location, string)  | false
-fontawesome   		  | use a fontawesome-icon as spinner  | $("#el")  | false
-custom        		  | use a custom jQuery-element as spinner  | jQuery-element  | false
+fontawesome   		  | use a fontawesome-icon as spinner  | fa fa-refresh fa-spin fa-2x fa-fw | false
+custom        		  | use a custom jQuery-element as spinner  | jQuery-element $("#el")  | false
 color             	  | color of the spinner  | color-value   | #fff
 background             	  | background of the overlay  | color-value   | rgba(0, 0, 0, 0.21)
 maxSize        		  | max-size of the spinner  | size-value  | 50px
@@ -128,7 +128,19 @@ $.busyLoadSetup({
 }); 
 ```         
 
+## Defaults
 
+To see the actual default-settings use **$fn.busyLoad.defaults**:
+ 
+```        
+$fn.busyLoad.defaults
+```     
+
+Setting a new default value:
+
+```        
+$fn.busyLoad.defaults.scolor = "blue"
+```     
 
 ## License
 

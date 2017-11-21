@@ -3,11 +3,18 @@ import {
     busyLoad,
     busyLoadSetup,
     busyLoadFull
-} from './lib/busy-load'
-window._ = require('lodash');
+} from './lib/busy-load.js'
+import {get} from "lodash";
+import defaults from './lib/defaults.js';
+ 
+jQuery = require('jquery');
 
-$(function() {
+
+(function($) {
     $.fn.busyLoad = busyLoad;
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
-});
+    $.fn.busyLoad.defaults = defaults;
+   
+// phantom-repbuit
+}(jQuery));

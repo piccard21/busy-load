@@ -6,6 +6,9 @@ const {plugins} = require('./plugins.js')
 
 // general options
 let options = {
+	externals: {
+	  jquery: 'jQuery'
+	},
     entry,
     plugins,
     output,

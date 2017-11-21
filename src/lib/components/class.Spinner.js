@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import {get} from "lodash";
 import { Component } from './class.Component.js';  
 import { SpinnerLib } from './class.SpinnerLib.js';  
 
@@ -6,23 +6,23 @@ export class Spinner extends Component {
     constructor(busyLoadOptions) {
         super("span", {}, busyLoadOptions); 
 
-        if (_.get(this._busyLoadOptions, 'fontawesome')) {
+        if (get(this._busyLoadOptions, 'fontawesome')) {
             this.createFontAwesomeTag();
         }
-        else if (_.get(this._busyLoadOptions, 'custom')) {
+        else if (get(this._busyLoadOptions, 'custom')) {
             this.createCustomTag();
         }
-        else if (_.get(this._busyLoadOptions, 'image')) {
+        else if (get(this._busyLoadOptions, 'image')) {
             this.createImageTag();
         }
-        else if (_.get(this._busyLoadOptions, 'spinner')) {
-            this.createCssTag(_.get(this._busyLoadOptions, 'spinner'));
+        else if (get(this._busyLoadOptions, 'spinner')) {
+            this.createCssTag(get(this._busyLoadOptions, 'spinner'));
         }
         else {
             this.createCssTag("pump");
         }
         
-        this.tag.addClass(_.get(this._busyLoadOptions, "spinnerClass"));
+        this.tag.addClass(get(this._busyLoadOptions, "spinnerClass"));
     } 
 
 
@@ -52,9 +52,9 @@ export class Spinner extends Component {
 
     createFontAwesomeTag() {
         this.options = {
-            "class": _.get(this._busyLoadOptions, 'fontawesome', "fa fa-refresh fa-spin fa-2x fa-fw"),
+            "class": get(this._busyLoadOptions, 'fontawesome', "fa fa-refresh fa-spin fa-2x fa-fw"),
             "css": {
-                "color": _.get(this._busyLoadOptions, 'color', "#fff")
+                "color": get(this._busyLoadOptions, 'color', "#fff")
             }
         };
 
@@ -68,8 +68,10 @@ export class Spinner extends Component {
     }
 
     createCustomTag() { 
-        let custom = _.get(this._busyLoadOptions, 'custom');
-        if (!custom instanceof jQuery) {
+        let custom = get(this._busyLoadOptions, 'custom');
+        let isJqueryObject = custom instanceof jQuery
+
+        if (!isJqueryObject) {
             throw "wrong type for creating a tag"; 
         }  
 
@@ -79,10 +81,10 @@ export class Spinner extends Component {
 
     setMaxMinSize() {
         this.tag.css({
-            "max-height": _.get(this._busyLoadOptions, 'maxSize'),  
-            "max-width":  _.get(this._busyLoadOptions, 'maxSize'),
-            "min-height": _.get(this._busyLoadOptions, 'minSize'),  
-            "min-width":  _.get(this._busyLoadOptions, 'minSize')
+            "max-height": get(this._busyLoadOptions, 'maxSize'),  
+            "max-width":  get(this._busyLoadOptions, 'maxSize'),
+            "min-height": get(this._busyLoadOptions, 'minSize'),  
+            "min-width":  get(this._busyLoadOptions, 'minSize')
         });
     }
 
