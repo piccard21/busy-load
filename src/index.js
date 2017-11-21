@@ -17,8 +17,9 @@ jQuery = require('jquery');
     $.fn.busyLoad.defaults = defaults;
   
 // travis
-// exceptions
 // events
+// phantom-repbuit
+// console
 
     // $.busyLoadSetup({
     //     animation: "slide",

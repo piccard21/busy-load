@@ -18,10 +18,10 @@ describe('functions are available', function() {
 });
 describe('busy-load core', function() {
     it('$.fn.busyLoad.defaults. is same as from $.busyLoadSetup', function() {
-    	$.busyLoadSetup({
+        $.busyLoadSetup({
             color: "green"
-        });   
-        expect($.fn.busyLoad.defaults.color).to.be.equal('green'); 
+        });
+        expect($.fn.busyLoad.defaults.color).to.be.equal('green');
     });
     it('$.busyLoadFull("show") without options', function() {
         $.busyLoadFull('show');
@@ -41,9 +41,9 @@ describe('busy-load core', function() {
     });
     it('caller gets active class', function() {
         $('#maskme').busyLoad('show');
-        expect($('#maskme')).to.have.class('busy-load-active'); 
+        expect($('#maskme')).to.have.class('busy-load-active');
     });
-    it('caller removes active class', function() { 
+    it('caller removes active class', function() {
         $('#maskme').busyLoad('hide');
         expect($('#maskme')).not.to.have.class('busy-load-active');
     });
@@ -103,34 +103,34 @@ describe('busy-load settings', function() {
     it('set color', function() {
         $('#maskme').busyLoad('show', {
             color: "rgb(0, 0, 255)"
-        }); 
+        });
         expect($('#maskme  .busy-load-spinner')).to.have.css('color', 'rgb(0, 0, 255)');
     });
     it('set background', function() {
         $('#maskme').busyLoad('show', {
             "background": "rgb(0, 0, 255)"
         });
-        expect($('#maskme .busy-load-container')).to.have.css('background-color', 'rgb(0, 0, 255)'); 
+        expect($('#maskme .busy-load-container')).to.have.css('background-color', 'rgb(0, 0, 255)');
     });
     it('set min/maxSize', function() {
         $('#maskme').busyLoad('show', {
             "minSize": "21px",
             "maxSize": "21px",
         });
-        expect($('#maskme .busy-load-spinner')).to.have.css('min-width', '21px'); 
-        expect($('#maskme .busy-load-spinner')).to.have.css('min-height', '21px'); 
-        expect($('#maskme .busy-load-spinner')).to.have.css('max-width', '21px'); 
-        expect($('#maskme .busy-load-spinner')).to.have.css('max-height', '21px'); 
+        expect($('#maskme .busy-load-spinner')).to.have.css('min-width', '21px');
+        expect($('#maskme .busy-load-spinner')).to.have.css('min-height', '21px');
+        expect($('#maskme .busy-load-spinner')).to.have.css('max-width', '21px');
+        expect($('#maskme .busy-load-spinner')).to.have.css('max-height', '21px');
     });
     it('text matches', function() {
         $('#maskme').busyLoad('show', {
-            "text": "Loading" 
+            "text": "Loading"
         });
         expect($('#maskme>.busy-load-container>.busy-load-container-item>.busy-load-text').text()).to.contain('Loading');
     });
     it('text matches also text with blanks', function() {
         $('#maskme').busyLoad('show', {
-            "text": "Whatever you want" 
+            "text": "Whatever you want"
         });
         expect($('#maskme .busy-load-text').text()).to.contain('Whatever you want');
     });
@@ -138,14 +138,14 @@ describe('busy-load settings', function() {
         $('#maskme').busyLoad('show', {
             "text": "Loading",
             "textColor": "rgb(0, 21, 255)",
-        }); 
-        expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 21, 255)'); 
+        });
+        expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 21, 255)');
     });
     it('textColor default is color', function() {
         $.fn.busyLoad.defaults.color = 'rgb(0, 128, 128)';
         $('#maskme').busyLoad('show', {
             "text": "Loading"
-        }); 
+        });
         expect($('#maskme .busy-load-text')).to.have.css('color', 'rgb(0, 128, 128)');
     });
     it('set textMargin & position', function() {
@@ -153,82 +153,98 @@ describe('busy-load settings', function() {
             "text": "Loading",
             "textPosition": "top",
             "textMargin": "10px",
-        }); 
-        expect($('#maskme .busy-load-text')).to.have.css('margin-bottom', '10px'); 
+        });
+        expect($('#maskme .busy-load-text')).to.have.css('margin-bottom', '10px');
     });
     it('set containerClass', function() {
         $('#maskme').busyLoad('show', {
-            "containerClass": "something-special", 
-        }); 
+            "containerClass": "something-special",
+        });
         expect($('#maskme .something-special')).to.exist;
     });
     it('set containerItemClass', function() {
         $('#maskme').busyLoad('show', {
-            "containerItemClass": "something-very-special", 
-        }); 
+            "containerItemClass": "something-very-special",
+        });
         expect($('#maskme .something-very-special')).to.exist;
     });
     it('set spinnerClass', function() {
         $('#maskme').busyLoad('show', {
-            "spinnerClass": "something-very-very-special", 
-        }); 
+            "spinnerClass": "something-very-very-special",
+        });
         expect($('#maskme .something-very-very-special')).to.exist;
     });
     it('set textClass', function() {
         $('#maskme').busyLoad('show', {
-        	"text": "Loading",
-            "textClass": "something-very-very-very-special", 
-        }); 
+            "text": "Loading",
+            "textClass": "something-very-very-very-special",
+        });
         expect($('#maskme .something-very-very-very-special')).to.exist;
     });
 });
 describe('busy-load settings with wrong parameters', function() {
-  
-    var fnAction = function(){
+    var fnAction = function() {
         $('#maskme').busyLoad('action-wrong')
     };
-    
-    it('wrong action', function() {  
-        expect(fnAction).to.throw("don't know action 'action-wrong'"); 
+    it('wrong action', function() {
+        expect(fnAction).to.throw("don't know action 'action-wrong'");
     });
-
-    var fnAnimations = function(){
+    var fnAnimations = function() {
         $('#maskme').busyLoad('show', {
             animation: "animation-wrong"
         })
     };
-
-    it('wrong animation', function() {  
-        expect(fnAnimations).to.throw("don\'t know animation: animation-wrong"); 
-    }); 
-
-    var fnTextPos = function(){
+    it('wrong animation', function() {
+        expect(fnAnimations).to.throw("don\'t know animation: animation-wrong");
+    });
+    var fnTextPos = function() {
         $('#maskme').busyLoad('show', {
             textPosition: "textPosition-wrong"
         })
     };
-
-    it('wrong textPosition', function() {  
-        expect(fnTextPos).to.throw("don\'t know textPosition: textPosition-wrong"); 
-    }); 
-
-    var fnCustomTag= function(){
+    it('wrong textPosition', function() {
+        expect(fnTextPos).to.throw("don\'t know textPosition: textPosition-wrong");
+    });
+    var fnCustomTag = function() {
         $('#maskme').busyLoad('show', {
             custom: "customEl-wrong"
         })
     };
-
-    it('wrong customTag', function() {  
-        expect(fnCustomTag).to.throw("wrong type for creating a tag"); 
-    }); 
-
-    var fnSpinner= function(){
+    it('wrong customTag', function() {
+        expect(fnCustomTag).to.throw("wrong type for creating a tag");
+    });
+    var fnSpinner = function() {
         $('#maskme').busyLoad('show', {
             spinner: "spinner-wrong"
         })
     };
-
-    it('wrong spinner', function() {  
-        expect(fnSpinner).to.throw("don\'t know spinner: spinner-wrong"); 
-    }); 
+    it('wrong spinner', function() {
+        expect(fnSpinner).to.throw("don\'t know spinner: spinner-wrong");
+    });
+});
+describe('busy-load events', function() {    
+    it('Event: bl.show should be fired', function() { 
+        var eventSpy = sinon.spy(); 
+        $(document).on('bl.show', eventSpy); 
+        $('#maskme').busyLoad('show');
+        expect(eventSpy).to.have.been.calledOnce;
+    });    
+    it('Event: bl.hide should be fired', function() { 
+        var eventSpy = sinon.spy(); 
+        $(document).on('bl.hide', eventSpy); 
+        $('#maskme').busyLoad('hide');
+        expect(eventSpy).to.have.been.calledOnce;
+    });
+    it('Event: bl.shown should be fired', function() { 
+        var eventSpy = sinon.spy(); 
+        $(document).on('bl.shown', eventSpy); 
+        $('#maskme').busyLoad('show');
+        expect(eventSpy).to.have.been.calledOnce;
+    });
+    it('Event: bl.hidden should be fired', function() { 
+        var eventSpy = sinon.spy(); 
+        $(document).on('bl.hidden', eventSpy); 
+        $('#maskme').busyLoad('hide');
+        expect(eventSpy).to.have.been.calledOnce;
+    });
 });
