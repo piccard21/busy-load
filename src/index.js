@@ -9,12 +9,9 @@ import defaults from './lib/defaults.js';
  
 jQuery = require('jquery');
 
-
 (function($) {
     $.fn.busyLoad = busyLoad;
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
     $.fn.busyLoad.defaults = defaults;
-   
-// phantom-repbuit
 }(jQuery));
