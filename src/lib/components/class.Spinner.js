@@ -71,7 +71,7 @@ export class Spinner extends Component {
         let custom = get(this._busyLoadOptions, 'custom');
         let isJqueryObject = custom instanceof jQuery
 
-        if (!isJqueryObject) {console.info("WRONG")
+        if (!isJqueryObject) {
             throw "wrong type for creating a tag"; 
         }  
 

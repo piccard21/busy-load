@@ -26253,8 +26253,9 @@ jQuery = __webpack_require__(340);
     $.fn.busyLoad.defaults = _defaults2.default;
 
     // travis
-    // exceptions
     // events
+    // phantom-repbuit
+    // console
 
     // $.busyLoadSetup({
     //     animation: "slide",
@@ -26851,7 +26852,6 @@ var Spinner = exports.Spinner = function (_Component) {
             var isJqueryObject = custom instanceof jQuery;
 
             if (!isJqueryObject) {
-                console.info("WRONG");
                 throw "wrong type for creating a tag";
             }
 
