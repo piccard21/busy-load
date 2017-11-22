@@ -142,8 +142,12 @@ $fn.busyLoad.defaults
 Setting a new default value:
 
 ```        
-$fn.busyLoad.defaults.scolor = "blue"
+$fn.busyLoad.defaults.color = "blue"
 ```     
+
+## Hint
+
+The overlay will get an absolute position, so if it doesn't show up at all or it's on the wrong place, remember that an absolute positioned element is positioned relative to the first parent element that has a position other than static. 
 
 ## License
 
