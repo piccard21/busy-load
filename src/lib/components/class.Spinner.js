@@ -1,6 +1,6 @@
-import {get} from "lodash";
 import { Component } from './class.Component.js';  
 import { SpinnerLib } from './class.SpinnerLib.js';  
+const get = require("lodash/get");
 
 export class Spinner extends Component {
     constructor(busyLoadOptions) {

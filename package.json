@@ -1,6 +1,6 @@
 {
   "name": "busy-load",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A flexible jQuery loading-mask",
   "main": "dist/app.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "watch": "cross-env NODE_ENV=DEVELOPMENT webpack --progress --hide-modules --watch",
     "prod": "npm run production",
     "production": "npm run development & cross-env NODE_ENV=PRODUCTION webpack --progress --hide-modules",
-    "start": "cross-env NODE_ENV=DEVELOPMENT-SERVER webpack-dev-server --open"
+    "start": "cross-env NODE_ENV=DEVELOPMENT-SERVER webpack-dev-server --open",
+    "prepublish": "npm test"
   },
   "homepage": "https://github.com/piccard21/busy-load",
   "keywords": [

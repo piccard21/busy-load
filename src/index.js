@@ -4,7 +4,6 @@ import {
     busyLoadSetup,
     busyLoadFull
 } from './lib/busy-load.js'
-import {get} from "lodash";
 import defaults from './lib/defaults.js';
  
 jQuery = require('jquery');
