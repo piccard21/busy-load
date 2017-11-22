@@ -11,7 +11,7 @@
     "prod": "npm run production",
     "production": "npm run development & cross-env NODE_ENV=PRODUCTION webpack --progress --hide-modules",
     "start": "cross-env NODE_ENV=DEVELOPMENT-SERVER webpack-dev-server --open",
-    "prepublish": "npm prod"
+    "prepublish": "npm test"
   },
   "homepage": "https://github.com/piccard21/busy-load",
   "keywords": [
