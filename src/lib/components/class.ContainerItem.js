@@ -1,5 +1,5 @@
 import {Component} from './class.Component.js';
-import {get} from "lodash";
+const get = require("lodash/get");
 
 export class ContainerItem extends Component {
     constructor(busyLoadOptions) { 

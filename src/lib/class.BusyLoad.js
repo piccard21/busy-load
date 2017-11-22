@@ -2,7 +2,7 @@ import {Container} from './components/class.Container.js';
 import {ContainerItem} from './components/class.ContainerItem.js'; 
 import {Text} from './components/class.Text.js'; 
 import {Spinner} from './components/class.Spinner.js'; 
-import {get} from "lodash";
+const get = require("lodash/get");
 
 export class BusyLoad {
     constructor(caller, defaults, options) { 

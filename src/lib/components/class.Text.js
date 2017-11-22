@@ -1,7 +1,7 @@
-import {get} from "lodash";
 import {
     Component
 } from './class.Component.js';
+const get = require("lodash/get");
 
 export class Text extends Component {
     constructor(busyLoadOptions) { 
