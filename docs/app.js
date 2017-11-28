@@ -232,4 +232,9 @@ $(function() {
             textClass: "my-own-text-class"
         });
     });
+
+    // static
+    $(".static-01").click(function(e) {
+        showHide(e, "#static-01");
+    });
 });
