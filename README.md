@@ -65,7 +65,6 @@ The overlay will gets an absolute position, so if your caller element has a posi
 
 ## Installation
 
-Like you have seen above, just include it via [cdn](https://www.jsdelivr.com/package/npm/busy-load) or add it using npm: 
 * cdn
 
 ```
