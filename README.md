@@ -61,17 +61,23 @@ $("#another-element").busyLoad("hide", {
 
 ### Hint
 
-The overlay will get an absolute position, so if your caller element has a position of *static*, busy-load will turn it to *relative*.
+The overlay will gets an absolute position, so if your caller element has a position of *static*, busy-load will turn it to *relative*.
 
 ## Installation
 
-Like you have seen above, just include it via [cdn](https://www.jsdelivr.com/package/npm/busy-load) or add it using npm: 
+* cdn
+
+```
+<script src="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.css" rel="stylesheet">
+```
  
+ * npm
 ```
 npm i busy-load
 ```
 
-Copy the files of the **dist** folder wherever you want them or require the package in your own code:
+You'll find a normal and a minified version of the js-& css file inside the **dist**-folder. You can copy and include them inside your header or require them:
 
 ```
 require('busy-load'); 
