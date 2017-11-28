@@ -61,7 +61,7 @@ $("#another-element").busyLoad("hide", {
 
 ### Hint
 
-The overlay will gets an absolute position, so if your caller element has a position of *static*, busy-load will turn it to *relative*.
+The overlay gets an absolute position, so if your caller element has a position of *static*, busy-load will turn it to *relative*.
 
 ## Installation
 
