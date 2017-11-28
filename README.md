@@ -7,7 +7,7 @@ A simple, but flexible loading-mask plugin for jQuery.
 
 * **Overlay**
   * animate it like fade or slide in
-  * tinker with the options, like background, color ...  
+  * fiddle around with plenty of options
 * **Spinners**
   * css - select from a collection of pure css-spinners from [Tobias Ahlin](http://tobiasahlin.com/spinkit/)
   * image - use an image as a spinner
@@ -15,7 +15,7 @@ A simple, but flexible loading-mask plugin for jQuery.
   * fontawesome - just use the library-icons
 * **Text**
   * show some text 
-  * position it, like top, bottom, ...
+  * position it on top, bottom, left or right of the spinner
   * customize your text, like color, margin, size ... 
 
 ## Demo
@@ -24,31 +24,44 @@ You can find some examples [here](https://piccard21.github.io/busy-load/).
 
 ## Getting started
 
-Add jQuery and then busy-load ...
+Add jQuery 
 
 ```
-<script src="http://code.jquery.com/jquery-3.2.1.min.js" </script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+```
 
+then busy-load
+
+```
 <script src="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.css" rel="stylesheet">
 ```
 
-* ... and call the plugin from your element:
+and call the plugin from your element
 
 ```
-$("#some-element").busyLoad('show');
-$("#some-element").busyLoad('hide');	
+$("#some-element").busyLoad("show");
 
 // with options
-$("#another-element").busyLoad('show', {
-	background: '#000',
+$("#another-element").busyLoad("show", {
+	background: "#000",
 	spinner: "cube",
-	animate: "slide"
+	animation: "slide"
 });
-$("#another-element").busyLoad('hide');
-
 ```
 
+```
+$("#some-element").busyLoad("hide");  
+
+// with options
+$("#another-element").busyLoad("hide", {
+  animation: "fade"
+});
+```
+
+### Hint
+
+The overlay will get an absolute position, so if your caller element has a position of *static*, busy-load will turn it to *relative*.
 
 ## Installation
 
@@ -145,9 +158,6 @@ Setting a new default value:
 $fn.busyLoad.defaults.color = "blue"
 ```     
 
-## Hint
-
-The overlay will get an absolute position, so if it doesn't show up at all or it's on the wrong place, remember that an absolute positioned element is positioned relative to the first parent element that has a position other than static. 
 
 ## License
 

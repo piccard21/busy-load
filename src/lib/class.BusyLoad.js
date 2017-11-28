@@ -128,6 +128,11 @@ export class BusyLoad {
         if(action == 'show') {
             const randomString = this.createRandomString(); 
 
+            // position static?
+            if(this.caller.css('position') === 'static') {
+                this.caller.css('position', 'relative')
+            }
+
             this._caller.addClass('busy-load-active');
             $tag.attr('id', randomString);
             $tag = this.animateShow($tag);
