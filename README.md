@@ -30,14 +30,14 @@ Add jQuery
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 ```
 
-and then busy-load
+then busy-load
 
 ```
 <script src="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/busy-load/dist/app.min.css" rel="stylesheet">
 ```
 
-* ... and call the plugin from your element
+and call the plugin from your element
 
 ```
 $("#some-element").busyLoad("show");
