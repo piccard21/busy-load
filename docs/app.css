@@ -57,3 +57,10 @@ code {
 .my-own-text-class {
     color: red !important;
 }
+
+.i-am-static {
+    position: static;
+    background: brown;
+    color: white;
+    padding: 1rem;
+}
