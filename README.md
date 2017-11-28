@@ -77,9 +77,8 @@ The overlay will gets an absolute position, so if your caller element has a posi
 npm i busy-load
 ```
 
-You'll find a normal and a minified version of the js-& css file inside the **dist**-folder
+You'll find a normal and a minified version of the js-& css file inside the **dist**-folder. You can copy and include them inside your header or require them:
 
-* node 
 ```
 require('busy-load'); 
 ```
