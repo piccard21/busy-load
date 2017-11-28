@@ -719,6 +719,11 @@ var BusyLoad = exports.BusyLoad = function () {
             if (action == 'show') {
                 var randomString = this.createRandomString();
 
+                // position static?
+                if (this.caller.css('position') === 'static') {
+                    this.caller.css('position', 'relative');
+                }
+
                 this._caller.addClass('busy-load-active');
                 $tag.attr('id', randomString);
                 $tag = this.animateShow($tag);

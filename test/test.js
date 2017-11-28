@@ -47,6 +47,12 @@ describe('busy-load core', function() {
         $('#maskme').busyLoad('hide');
         expect($('#maskme')).not.to.have.class('busy-load-active');
     });
+    it('caller turns position of static to relative', function() {
+        $('#maskme').css('postion', 'static');
+        $('#maskme').busyLoad('show'); 
+        expect($('#maskme')).to.have.css('position', 'relative');
+        $('#maskme').busyLoad('hide');
+    });
 });
 describe('busy-load components', function() {
     before(function() {
