@@ -7,7 +7,7 @@ A simple, but flexible loading-mask plugin for jQuery.
 
 * **Overlay**
   * animate it like fade or slide in
-  * tinker with the options, like background, color ...  
+  * fiddle around with plenty of options
 * **Spinners**
   * css - select from a collection of pure css-spinners from [Tobias Ahlin](http://tobiasahlin.com/spinkit/)
   * image - use an image as a spinner
@@ -15,7 +15,7 @@ A simple, but flexible loading-mask plugin for jQuery.
   * fontawesome - just use the library-icons
 * **Text**
   * show some text 
-  * position it, like top, bottom, ...
+  * position it on top, bottom, left or right of the spinner
   * customize your text, like color, margin, size ... 
 
 ## Demo
@@ -61,7 +61,7 @@ $("#another-element").busyLoad("hide", {
 
 ### Hint
 
-The overlay will get an absolute position, so if your caller element has a position of *static*, busy-load will turn it to relative.
+The overlay will get an absolute position, so if your caller element has a position of *static*, busy-load will turn it to *relative*.
 
 ## Installation
 
