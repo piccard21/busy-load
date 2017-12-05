@@ -7,7 +7,7 @@
 		exports["busyLoad"] = factory(require("jQuery"));
 	else
 		root["busyLoad"] = factory(root["jQuery"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_64__) {
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_64__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -809,7 +809,8 @@ var Container = exports.Container = function (_Component) {
                 "align-items": "center",
                 "justify-content": "center",
                 "width": "100%",
-                "height": "100%"
+                "height": "100%",
+                "z-index": 9999
             }
         }, busyLoadOptions));
     }
