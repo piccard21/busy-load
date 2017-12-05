@@ -61,3 +61,7 @@ typings/
 .DS_STORE
 *.sublime-project
 *.sublime-workspace
+
+package-lock.json
+
+.idea/
