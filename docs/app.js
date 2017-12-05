@@ -10,7 +10,7 @@ $(function() {
         $(tag).click(".busy-load-container", function() {
             $(tag).busyLoad("hide");
         });
-    }
+    };
     // fullscreen
     $('.btn-fullscreen').click(function() {
         $.busyLoadFull('show', {
@@ -23,7 +23,7 @@ $(function() {
                 animation: "fade"
             });
         });
-    })
+    });
     // spinners
     $(".spinner-01").click(function(e) {
         showHide(e, "#spinner-01");
@@ -108,7 +108,6 @@ $(function() {
         if (count <= 0) {
             clearInterval(interval);
             $("#custom-01").busyLoad("hide");
-            return;
         }
     }, 1000);
     // size
@@ -147,7 +146,7 @@ $(function() {
     $(".text-04").click(function(e) {
         showHide(e, "#text-04", {
             text: "LOADING ...",
-            textPosition: "right"
+            textPosition: "left"
         });
     });
     $(".text-05").click(function(e) {

@@ -247,8 +247,7 @@ let interval = setInterval(function(){
     customElement.text(count); 
     if (count &lt;= 0) { 
         clearInterval(interval); 
-        $("#el").busyLoad("hide"); 
-        return; 
+        $("#el").busyLoad("hide");
     } 
 }, 1000);</code>
             </div>
@@ -348,8 +347,8 @@ let interval = setInterval(function(){
                 <div class="card" id="text-04">
                     <div class="card-body">
                         <h4 class="card-title">textPosition:</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">right</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
-                        textPosition: "right"<br>
+                        <h6 class="card-subtitle mb-2 text-muted">left</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
+                        textPosition: "left"<br>
                         });</code>
                         <p></p><a class="btn btn-info text-04" href="#">show</a>
                     </div>
