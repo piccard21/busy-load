@@ -344,17 +344,6 @@ let interval = setInterval(function(){
         </div><!-- row -->
         <div class="row">
             <div class="col-md-4">
-                <div class="card" id="text-04">
-                    <div class="card-body">
-                        <h4 class="card-title">textPosition:</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">left</h6><code>$("#el").busyLoad("show", { text: "LOADING ...",<br>
-                        textPosition: "left"<br>
-                        });</code>
-                        <p></p><a class="btn btn-info text-04" href="#">show</a>
-                    </div>
-                </div>
-            </div><!-- col -->
-            <div class="col-md-4">
                 <div class="card" id="text-05">
                     <div class="card-body">
                         <h4 class="card-title">textPosition:</h4>
@@ -559,7 +548,7 @@ let interval = setInterval(function(){
         <div class="row">
             <div class="col-md-6">
                 <p>
-                If a container has a position of <i>static</i>, busy-load will turn it to <i>relative</i>, because otherwise the overlay would be positioned to a parent element other than <i>static</i>.
+                If the calling element has a position of <i>static</i>, busy-load will turn it into <i>relative</i>, because otherwise the overlay would be positioned to a parent element other than <i>static</i>.
                 </p>
             </div><!-- col --> 
             <div class="col-md-6">
