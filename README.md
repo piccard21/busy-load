@@ -22,6 +22,11 @@ A simple, but flexible loading-mask plugin for jQuery.
 
 You can find some examples [here](https://piccard21.github.io/busy-load/).
 
+## Hint: tardis
+
+- In former versions of **busy-load** a **tardis**-image was included. Due to the package-size, [the image was now outsourced](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif). 
+- If you want to include it, just use [this url](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif) on the *image*-option or download [form there](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif).
+
 ## Getting started
 
 Add jQuery 
