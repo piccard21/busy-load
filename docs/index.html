@@ -47,16 +47,28 @@
         <div class="row">
             <div class="col-md">
                 <h2>Setup</h2>
-                <p>Use <strong>$.busyLoadSetup()</strong> to preconfigure busy-load, so you don't have to set your default options all the time.</p><code>$.busyLoadSetup({ animation: "slide", background: "rgba(255, 152, 0, 0.86)" });</code>
+                <p>Use <strong>$.busyLoadSetup()</strong> to preconfigure busy-load, so you don't have to set your default options all the time.</p>
+                <code>
+                    $.busyLoadSetup({ animation: "slide", background: "rgba(255, 152, 0, 0.86)" });
+                </code>
             </div>
         </div><!-- Fullscreen -->
         <div class="row">
             <div class="col-md">
                 <h2>Fullscreen</h2>
-                <p>For a fullscreen-overlay use <strong>$.busyLoadFull()</strong></p><code>$.busyLoadFull("show", { background: "rgba(0, 51, 101, 0.83)", image: "tardis", animate: "slide" });</code><br>
-                <code>$.busyLoadFull("hide", { animate: "fade" });</code><br>
+                <p>For a fullscreen-overlay use <strong>$.busyLoadFull()</strong></p><code>$.busyLoadFull("show");</code><br>
+                <code>$.busyLoadFull("hide");</code><br>
                 <br>
                 <button class="btn btn-info btn-fullscreen" type="button">Fullscreen</button>
+            </div>
+        </div>
+    </div><!-- container -->
+    <div class="container">
+        <!-- documentation -->
+        <div class="row">
+            <div class="col-md">
+                <h2>Hint: tardis</h2>
+                <p>In former versions of <strong>busy-load</strong> a <strong>tardis</strong>-image was included. Due to the package-size, <a href="http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif">the image was now outsourced</a>. If you want to include it, just use <a href="http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif">this url</a> on the <strong>image</strong>-option or download form there.</p>
             </div>
         </div>
     </div><!-- container -->
@@ -170,7 +182,8 @@
                 <div class="card" id="img-01">
                     <div class="card-body">
                         <h4 class="card-title">image:</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">source</h6><code>$("#el").busyLoad("show", { background: "rgba(76, 175, 80, 0.73)",<br>
+                        <h6 class="card-subtitle mb-2 text-muted">base64</h6>
+                        <code>$("#el").busyLoad("show", { background: "rgba(76, 175, 80, 0.73)",<br>
                         image: "data:image/gif;base64,R0lGODlhQAA..."<br>
                         });</code>
                         <p></p><a class="btn btn-info img-01" href="#">show</a>
@@ -181,10 +194,9 @@
                 <div class="card" id="img-02">
                     <div class="card-body">
                         <h4 class="card-title">image:</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">tardis</h6>
-                        <p>An image is already included, base64 encoded.</p><code>$("#el").busyLoad("show", {<br>
-                        image: "tardis",<br>
-                        background: "rgba(0, 51, 101, 0.83)"<br>
+                        <h6 class="card-subtitle mb-2 text-muted">url</h6>
+                        <code>$("#el").busyLoad("show", {<br>
+                        image: "http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif"<br>
                         });</code> <a class="btn btn-info img-02" href="#">show</a>
                     </div>
                 </div>
@@ -290,7 +302,7 @@ let interval = setInterval(function(){
                         maxSize: "200px",<br>
                         minSize: "200px",<br>
                         background: "rgba(0, 51, 101, 0.83)",<br>
-                        image: "tardis"<br>
+                        image: "./tardis.gif"<br>
                         });</code>
                         <p></p><a class="btn btn-info size-02" href="#">show</a>
                     </div>
