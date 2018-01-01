@@ -70,6 +70,12 @@ $(function() {
             image: "http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif",
         });
     });
+    $(".img-03").click(function(e) {
+        showHide(e, "#img-03", {
+            background: "rgba(0, 51, 101, 0.83)",
+            image: "./tardis.gif",
+        });
+    });
     // fontawesome
     $(".fawe-01").click(function(e) {
         showHide(e, "#fawe-01", {
