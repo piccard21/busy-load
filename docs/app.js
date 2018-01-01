@@ -13,15 +13,9 @@ $(function() {
     };
     // fullscreen
     $('.btn-fullscreen').click(function() {
-        $.busyLoadFull('show', {
-            background: "rgba(0, 51, 101, 0.83)",
-            image: "tardis",
-            animation: "slide"
-        });
+        $.busyLoadFull('show');
         $("body>.busy-load-container").click(function() {
-            $.busyLoadFull('hide', {
-                animation: "fade"
-            });
+            $.busyLoadFull('hide');
         });
     });
     // spinners
@@ -73,7 +67,7 @@ $(function() {
     $(".img-02").click(function(e) {
         showHide(e, "#img-02", {
             background: "rgba(0, 51, 101, 0.83)",
-            image: "tardis"
+            image: "http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif",
         });
     });
     // fontawesome
@@ -122,7 +116,7 @@ $(function() {
             maxSize: "200px",
             minSize: "200px",
             background: "rgba(0, 51, 101, 0.83)",
-            image: "tardis"
+            image: "./tardis.gif",
         });
     });
     // text
