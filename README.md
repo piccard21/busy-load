@@ -137,10 +137,7 @@ bl.hidden                | after overlay is removed from DOM | event, $container
 For a fullscreen-overlay use **$.busyLoadFull()**:
 
 ```        
-$.busyLoadFull("show", {
-	background: "blue",
-	image: "tardis"
-});
+$.busyLoadFull("show");
 $.busyLoadFull("hide");
 ```    
 
