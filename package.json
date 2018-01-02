@@ -1,8 +1,8 @@
 {
   "name": "busy-load",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A flexible jQuery loading-mask",
-  "main": "dist/app.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha-phantomjs -R nyan test/testrunner.html",
     "dev": "npm run development",

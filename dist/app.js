@@ -490,7 +490,7 @@ var _defaults2 = _interopRequireDefault(_defaults);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-jQuery = __webpack_require__(64);
+var jQuery = __webpack_require__(64);
 
 (function ($) {
     $.fn.busyLoad = _busyLoad.busyLoad;
