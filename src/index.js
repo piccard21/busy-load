@@ -5,12 +5,12 @@ import {
     busyLoadFull
 } from './lib/busy-load.js'
 import defaults from './lib/defaults.js';
- 
-jQuery = require('jquery');
+
+let jQuery = require('jquery');
 
 (function($) {
     $.fn.busyLoad = busyLoad;
     $.busyLoadSetup = busyLoadSetup;
     $.busyLoadFull = busyLoadFull;
     $.fn.busyLoad.defaults = defaults;
-}(jQuery));
+})(jQuery);
