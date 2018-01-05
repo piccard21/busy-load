@@ -84,15 +84,18 @@ The overlay gets an absolute position, so if your caller element has a position 
 npm i busy-load
 ```
 
+- *busy-load* imorts its css to the bundle, so it's up to you what you do with it.
+
 #### import 
 ```
-import('busy-load'); 
+import 'busy-load'; 
 ```
 
 #### require 
 ```
 require('busy-load'); 
 ```
+
 
 #### copy
 - You'll find a normal and a minified version of the js-& css file inside the **dist**-folder. You can copy them wherever you'd like and include them by a *link*- and *script*-tag.
