@@ -532,20 +532,21 @@ function busyLoadSetup(settings) {
 }
 
 function busyLoad(action, options) {
-    var bl = new _classBusyLoad.BusyLoad(this, JSON.parse(JSON.stringify(_defaults2.default)), options);
 
-    switch (action) {
-        case "show":
-            bl.show();
-            break;
-        case "hide":
-            bl.hide();
-            break;
-        default:
-            throw 'don\'t know action \'' + action + '\'';
-    }
+    return this.each(function () {
+        var bl = new _classBusyLoad.BusyLoad($(this), JSON.parse(JSON.stringify(_defaults2.default)), options);
 
-    return this;
+        switch (action) {
+            case "show":
+                bl.show();
+                break;
+            case "hide":
+                bl.hide();
+                break;
+            default:
+                throw 'don\'t know action \'' + action + '\'';
+        }
+    });
 }
 
 function busyLoadFull(action, options) {

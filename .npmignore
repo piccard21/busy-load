@@ -62,4 +62,4 @@ typings/
 *.sublime-project
 *.sublime-workspace
 .idea/
-.docs/
+docs
