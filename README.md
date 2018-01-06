@@ -18,7 +18,7 @@ A simple, but flexible loading-mask plugin for jQuery.
   * position it on top, bottom, left or right of the spinner
   * customize your text, like color, margin, size ... 
 * **ES6**
-  * because *busy-load* is completely in ES6, you can simply *require* or *import* it
+  * because *busy-load* is completely written in ES6, you can simply *require* or *import* it
 
 ## Demo
 
@@ -84,7 +84,7 @@ The overlay gets an absolute position, so if your caller element has a position 
 npm i busy-load
 ```
 
-- *busy-load* imorts its css to the bundle, so it's up to you what you do with it.
+- *busy-load* imports its css to the bundle, so it's up to you what you do with it.
 
 #### import 
 ```
