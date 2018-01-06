@@ -53,6 +53,16 @@ describe('busy-load core', function() {
         expect($('#maskme')).to.have.css('position', 'relative');
         $('#maskme').busyLoad('hide');
     });
+
+
+    it('busyLoad("show") on multiple elements', function() {
+        $('.maskme').busyLoad('show');
+        expect($('.maskme>.busy-load-container').length).to.be.equal(4);
+    });
+    it('busyLoad("hide") on multiple elements', function() {
+        $('.maskme').busyLoad('hide');
+        expect($('#maskme>.busy-load-container')).not.to.exist;
+    });
 });
 describe('busy-load components', function() {
     before(function() {
