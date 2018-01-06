@@ -18,7 +18,7 @@ A simple, but flexible loading-mask plugin for jQuery.
   * position it on top, bottom, left or right of the spinner
   * customize your text, like color, margin, size ... 
 * **ES6**
-  * because *busy-load* is completely in ES6, you can simply *require* or *import* it
+  * because *busy-load* is completely written in ES6, you can simply *require* or *import* it
 
 ## Demo
 
@@ -26,8 +26,8 @@ You can find some examples [here](https://piccard21.github.io/busy-load/).
 
 ## Hint: tardis
 
-- In former versions of **busy-load** a **tardis**-image was included. Due to the package-size, [the image was now outsourced](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif). 
-- If you want to include it, just use [this url](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif) on the *image*-option or download it [form there](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif).
+- In former versions of **busy-load** a *tardis*-image was included. Due to the package-size, [the image was now outsourced](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif). 
+- If you want to include it, just use [this url](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif) on the *image*-option or download it [form here](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif).
 
 ## Getting started
 
@@ -84,7 +84,7 @@ The overlay gets an absolute position, so if your caller element has a position 
 npm i busy-load
 ```
 
-- *busy-load* imorts its css to the bundle, so it's up to you what you do with it.
+- *busy-load* imports its css to the bundle, so it's up to you, what you do with it.
 
 #### import 
 ```
@@ -98,7 +98,7 @@ require('busy-load');
 
 
 #### copy
-- You'll find a normal and a minified version of the js-& css file inside the **dist**-folder. You can copy them wherever you'd like and include them by a *link*- and *script*-tag.
+- You'll find a normal and a minified version of the *js*-& *css* file inside the **dist**-folder. You can copy them wherever you'd like and include them by a *link*- and *script*-tag.
 
  
 
@@ -152,6 +152,8 @@ For a fullscreen-overlay use **$.busyLoadFull()**:
 $.busyLoadFull("show");
 $.busyLoadFull("hide");
 ```    
+
+- the method accepts the same options like *busyLoad()*
 
 ## Setup
 
