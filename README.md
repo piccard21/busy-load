@@ -6,8 +6,8 @@
 A simple, but flexible loading-mask plugin for jQuery.
 
 * **Overlay**
-  * animate it like fade or slide in
-  * fiddle around with plenty of customization options to fit your needs 
+  * choose an animation, like fading or sliding
+  * fiddle around with plenty of customization options 
 * **Spinners**
   * css - select from a collection of pure css-spinners from [Tobias Ahlin](http://tobiasahlin.com/spinkit/)
   * image - use an image as a spinner
@@ -79,7 +79,7 @@ The overlay gets an absolute position, so if your caller element has a position 
 npm i busy-load
 ```
 
-- *busy-load* imports its scss to the bundle, so you will need a [sass-loader](https://github.com/webpack-contrib/sass-loader).
+- **HINT**: *busy-load* imports its scss to the bundle, so you will need a [sass-loader](https://github.com/webpack-contrib/sass-loader).
 
 #### import 
 ```
@@ -166,13 +166,13 @@ $.busyLoadSetup({
 To see the actual default-settings use **$fn.busyLoad.defaults**:
  
 ```        
-$fn.busyLoad.defaults
+$.fn.busyLoad.defaults
 ```     
 
 Setting a new default value:
 
 ```        
-$fn.busyLoad.defaults.color = "blue"
+$.fn.busyLoad.defaults.color = "blue"
 ```     
 
 
