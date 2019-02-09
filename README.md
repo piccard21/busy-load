@@ -6,8 +6,8 @@
 A simple, but flexible loading-mask plugin for jQuery.
 
 * **Overlay**
-  * animate it like fade or slide in
-  * fiddle around with plenty of options to fit your needs 
+  * choose an animation, like fade or slide in
+  * fiddle around with plenty of customization options 
 * **Spinners**
   * css - select from a collection of pure css-spinners from [Tobias Ahlin](http://tobiasahlin.com/spinkit/)
   * image - use an image as a spinner
@@ -23,11 +23,6 @@ A simple, but flexible loading-mask plugin for jQuery.
 ## Demo
 
 You can find some examples [here](https://piccard21.github.io/busy-load/).
-
-## Hint: tardis
-
-- In former versions of **busy-load** a *tardis*-image was included. Due to the package-size, [the image was now outsourced](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif). 
-- If you want to include it, just use [this url](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif) on the *image*-option or [download](http://cafe-serendipity.com/wp-content/uploads/2018/01/tardis.gif) it.
 
 ## Getting started
 
@@ -84,7 +79,7 @@ The overlay gets an absolute position, so if your caller element has a position 
 npm i busy-load
 ```
 
-- *busy-load* imports its css to the bundle, so it's up to you, what you do with it.
+- **HINT**: *busy-load* imports its scss to the bundle, so you will need a [sass-loader](https://github.com/webpack-contrib/sass-loader).
 
 #### import 
 ```
@@ -171,13 +166,13 @@ $.busyLoadSetup({
 To see the actual default-settings use **$fn.busyLoad.defaults**:
  
 ```        
-$fn.busyLoad.defaults
+$.fn.busyLoad.defaults
 ```     
 
 Setting a new default value:
 
 ```        
-$fn.busyLoad.defaults.color = "blue"
+$.fn.busyLoad.defaults.color = "blue"
 ```     
 
 
