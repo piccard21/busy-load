@@ -6,7 +6,7 @@
 A simple, but flexible loading-mask plugin for jQuery.
 
 * **Overlay**
-  * choose an animation, like fading or sliding
+  * choose an animation, like fade or slide in
   * fiddle around with plenty of customization options 
 * **Spinners**
   * css - select from a collection of pure css-spinners from [Tobias Ahlin](http://tobiasahlin.com/spinkit/)
